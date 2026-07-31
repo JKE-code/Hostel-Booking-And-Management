@@ -1,0 +1,59 @@
+# ============================================================
+# Alluri Resorts - .gitignore
+# ============================================================
+
+# --- Sensitive configuration (NEVER commit these) ---
+config/db.php
+config/razorpay.php
+.env
+*.env
+
+# --- Logs ---
+*.log
+logs/
+
+# --- OS / Editor junk ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Backup files ---
+*.backup
+*.bak
+*.orig
+
+# --- Old/unused directories ---
+old_css/
+old_js/
+
+# --- Debug & test files (not for production) ---
+error_check.php
+test_simple.php
+test_room_prices.php
+admin/debug_booking_api.php
+admin/test_activity_logs.php
+admin/test_addons_db.php
+admin/test_booking_api.php
+admin/test_booking_details.php
+admin/test_room_types.php
+admin/verify_addons.php
+admin/fix_room_types.php
+user/debug_session.php
+user/debug_booking_session.php
+user/test_addon_prices.php
+user/test_ajax.html
+user/test_booking_session.php
+user/test_contact_simple.html
+user/test_contact_submit.php
+user/test_dynamic_prices.php
+user/test_review_submit.php
+user/check_reviews.php
+user/booking_test_mode.php
+
+# --- SQL schema files (keep locally, not in repo) ---
+sql.md
+sql_content.md
+main_sql.md
+finalized_sql.md
+database_optimizations.sql

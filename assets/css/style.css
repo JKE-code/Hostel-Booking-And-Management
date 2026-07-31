@@ -1,0 +1,5675 @@
+/* ======================================== */
+/* ADMIN PANEL CSS - Complete */
+/* ======================================== */
+
+/* CSS Variables */
+:root {
+    --color-primary: #8b0000;
+    --color-secondary: #2d5f3f;
+    --color-dark: #1a1a1a;
+    --color-gray: #6b7280;
+    --color-light-gray: #f3f4f6;
+    --color-border: #e5e7eb;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+    --color-info: #3b82f6;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --color-white: #ffffff;
+    --color-text: #333333;
+    --color-cream: #f8f9fa;
+    --font-primary: "Montserrat", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    color: var(--color-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Admin Header */
+.admin-header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #6b0000 100%);
+    color: white;
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.admin-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.admin-header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Admin Navigation */
+.admin-nav {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.admin-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+    font-size: 0.9rem;
+}
+
+.admin-nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-nav a.active {
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+.admin-nav .logout-btn {
+    background: rgba(255, 255, 255, 0.15);
+    margin-left: auto;
+}
+
+/* Buttons */
+.btn-secondary, .btn-logout, .btn-primary, .btn-danger, .btn-generate, .btn-nav {
+    padding: 0.625rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.btn-logout {
+    background: rgba(239, 68, 68, 0.2);
+    color: white;
+}
+
+.btn-logout:hover {
+    background: rgba(239, 68, 68, 0.3);
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #6b0000;
+}
+
+.btn-nav {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.btn-nav:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.btn-nav.active {
+    background: white;
+    color: var(--color-primary);
+}
+
+.btn-danger {
+    background: var(--color-danger);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+.btn-generate {
+    background: var(--color-secondary);
+    color: white;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.btn-generate:hover {
+    background: #1a4028;
+}
+
+.btn-copy, .btn-delete, .btn-edit {
+    flex: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-copy {
+    background: var(--color-info);
+    color: white;
+}
+
+.btn-copy:hover {
+    background: #2563eb;
+}
+
+.btn-delete {
+    background: var(--color-danger);
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #dc2626;
+}
+
+.btn-edit {
+    background: var(--color-warning);
+    color: white;
+}
+
+.btn-edit:hover {
+    background: #d97706;
+}
+
+.btn-update {
+    padding: 0.625rem 1rem;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-left: 2px solid var(--color-border);
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-update:hover {
+    background: #6b0000;
+}
+
+/* Main Content */
+.dashboard-main {
+    padding: 2rem 0;
+}
+
+.section-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.section-card h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+}
+
+/* Form Styles */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--color-dark);
+}
+
+.required {
+    color: var(--color-danger);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.625rem 0.75rem;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    transition: border-color 0.2s ease;
+    background: white;
+    width: 100%;
+}
+
+.form-group select {
+    position: relative;
+    z-index: 1;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    z-index: 2;
+}
+
+.form-group small {
+    font-size: 0.8125rem;
+    color: var(--color-gray);
+}
+
+.input-with-button {
+    display: flex;
+    gap: 0.5rem;
+    align-items: stretch;
+}
+
+.input-with-button input {
+    flex: 1;
+    min-width: 0;
+}
+
+.input-with-button span {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+}
+
+/* Section Header */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.stats-pills {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.stat-pill {
+    background: var(--color-light-gray);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    color: var(--color-gray);
+}
+
+.stat-pill strong {
+    color: var(--color-dark);
+    font-weight: 700;
+}
+
+.stat-pill.occupied {
+    background: #fef2f2;
+    border-color: var(--color-danger);
+}
+
+.stat-pill.available {
+    background: #f0fdf4;
+    border-color: var(--color-success);
+}
+
+.pill-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-gray);
+}
+
+.pill-value {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+/* Coupons Grid */
+.coupons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.coupon-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.coupon-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.coupon-card.expired {
+    opacity: 0.6;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+}
+
+.coupon-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.coupon-code {
+    font-family: 'Poppins', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 1px;
+}
+
+.coupon-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.coupon-status.active {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.coupon-status.expired {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.coupon-discount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-success);
+    margin: 0.5rem 0;
+}
+
+.coupon-description {
+    font-size: 0.875rem;
+    color: var(--color-gray);
+    margin-bottom: 1rem;
+}
+
+.coupon-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.875rem;
+}
+
+.coupon-detail {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8125rem;
+}
+
+.coupon-detail-label {
+    color: var(--color-gray);
+}
+
+.coupon-detail-value {
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.coupon-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Statistics */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-box, .stat-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.stat-card {
+    border-left: 4px solid var(--color-primary);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.stat-card.primary { border-left-color: var(--color-primary); }
+.stat-card.success { border-left-color: var(--color-success); }
+.stat-card.info { border-left-color: var(--color-info); }
+.stat-card.warning { border-left-color: var(--color-warning); }
+
+.stat-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-value {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--color-gray);
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--color-gray);
+}
+
+.empty-icon, .empty-state-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.empty-state-text {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    animation: fadeIn 0.2s ease;
+}
+
+.modal.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: white;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #6b0000 100%);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-size: 1.25rem;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.modal-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 2rem;
+    overflow-y: auto;
+    max-height: calc(90vh - 100px);
+}
+
+.modal-footer {
+    padding: 1.5rem;
+    background: var(--color-light-gray);
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.coupon-preview {
+    background: var(--color-light-gray);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    font-family: 'Poppins', monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-primary);
+}
+
+.warning-text {
+    color: var(--color-warning);
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.detail-group {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.detail-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.detail-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.detail-value {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.detail-value.large {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.payment-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.payment-badge.complete {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.payment-badge.advance {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.payment-badge.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+/* Success/Error Messages */
+.success-message {
+    background: #d1fae5;
+    color: #065f46;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Add-ons Pricing */
+.addons-pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.addon-price-item {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+.addon-price-item label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--color-dark);
+    margin-bottom: 0.75rem;
+}
+
+.price-input-group {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+}
+
+.currency-symbol {
+    display: flex;
+    align-items: center;
+    padding: 0 0.75rem;
+    background: #f3f4f6;
+    border-right: 2px solid var(--color-border);
+    font-weight: 600;
+    color: var(--color-gray);
+}
+
+.price-input-group input {
+    flex: 1;
+    border: none;
+    padding: 0.625rem 0.75rem;
+    font-size: 0.9375rem;
+    min-width: 0;
+}
+
+.price-input-group input:focus {
+    outline: none;
+}
+
+/* Room Categories */
+.room-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.category-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    box-shadow: var(--shadow-xl);
+}
+
+.category-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 2rem;
+    border-bottom: 3px solid var(--color-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.category-info h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+}
+
+.category-desc {
+    font-size: 0.95rem;
+    color: var(--color-gray);
+    font-weight: 500;
+}
+
+.category-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Rooms Grid */
+.rooms-grid {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.25rem;
+}
+
+.room-box {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 3px solid var(--color-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.room-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+    transition: all 0.3s ease;
+}
+
+.room-box.occupied::before {
+    background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+}
+
+.room-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: var(--color-primary);
+}
+
+.room-box.occupied {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border-color: #fca5a5;
+}
+
+.room-box.occupied:hover {
+    border-color: var(--color-danger);
+    box-shadow: 0 8px 24px rgba(239, 68, 68, 0.2);
+}
+
+.room-box.available {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-color: #86efac;
+}
+
+.room-box.available:hover {
+    border-color: #10b981;
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
+}
+
+.room-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 0.75rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.room-status {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.room-status.available {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.room-status.occupied {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+}
+
+.room-guest {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    font-size: 0.875rem;
+    color: #374151;
+    font-weight: 600;
+    line-height: 1.4;
+    min-height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.room-guest strong {
+    color: var(--color-dark);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+/* Admin Login Styles */
+.admin-login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    padding: 20px;
+}
+
+.login-box {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-box h1 {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.login-box p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.login-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.login-form input {
+    width: 100%;
+    padding: 0.9rem;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 10px rgba(139, 0, 0, 0.1);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.back-link a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* Admin Dashboard Styles */
+body.admin-page {
+    background-color: #f5f5f5;
+}
+
+.dashboard-container {
+    padding: 3rem 0;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.dashboard-card h2 {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.dashboard-card h2::after {
+    display: none;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.room-price-card {
+    border: 2px solid var(--color-border);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.room-price-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.1);
+}
+
+.room-price-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.price-input-group {
+    margin-bottom: 1rem;
+}
+
+.price-input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    font-size: 0.9rem;
+}
+
+.price-input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.price-input-group input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.current-price {
+    background: var(--color-cream);
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.current-price strong {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+}
+
+.save-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+    background: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+.save-all-btn {
+    background: linear-gradient(135deg, #2d5f3f 0%, #1a4028 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.save-all-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(45, 95, 63, 0.3);
+}
+
+.info-box {
+    background: rgba(139, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--color-primary);
+    margin-bottom: 2rem;
+}
+
+.info-box p {
+    margin: 0;
+    color: var(--color-dark);
+}
+
+.admin-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.admin-tool-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.admin-tool-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(139, 0, 0, 0.15);
+}
+
+.admin-tool-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.admin-tool-card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.admin-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Toggle Slider Styles (for Queries Page) */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.toggle-slider {
+    background: var(--color-light-gray);
+    border-radius: 50px;
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-option {
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: var(--color-gray);
+}
+
+.toggle-option.active {
+    background: white;
+    color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-option:hover:not(.active) {
+    color: var(--color-dark);
+}
+
+/* Table Styles */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.data-table thead {
+    background: var(--color-light-gray);
+}
+
+.data-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-dark);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.data-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.data-table tbody tr:hover {
+    background: var(--color-light-gray);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-view {
+    background: var(--color-info);
+    color: white;
+}
+
+.btn-view:hover {
+    background: #2563eb;
+}
+
+.btn-keep {
+    background: var(--color-success);
+    color: white;
+}
+
+.btn-keep:hover {
+    background: #059669;
+}
+
+.btn-unkeep {
+    background: var(--color-warning);
+    color: white;
+}
+
+.btn-unkeep:hover {
+    background: #d97706;
+}
+
+/* Mobile Navigation Toggle */
+.admin-nav-toggle,
+.admin-nav-toggle-label {
+    display: none;
+}
+
+.admin-nav-toggle-label {
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.admin-nav-toggle-label span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+.admin-nav-toggle:checked ~ .admin-nav-toggle-label span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.admin-nav-toggle:checked ~ .admin-nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+}
+
+.admin-nav-toggle:checked ~ .admin-nav-toggle-label span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .admin-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        position: relative;
+    }
+    
+    .admin-header h1 {
+        flex: 1;
+        font-size: 1.4rem;
+        margin: 0;
+    }
+    
+    /* Hamburger menu toggle - hidden by default */
+    .admin-nav-toggle {
+        display: none;
+    }
+    
+    .admin-nav-toggle-label {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        z-index: 1002;
+        order: 3;
+    }
+    
+    .admin-nav-toggle-label span {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        transition: 0.3s;
+        border-radius: 3px;
+    }
+    
+    .admin-nav-toggle:checked ~ .admin-nav-toggle-label span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .admin-nav-toggle:checked ~ .admin-nav-toggle-label span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .admin-nav-toggle:checked ~ .admin-nav-toggle-label span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    /* Mobile menu styling - matches user pages */
+    .admin-nav {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        background-color: rgba(255, 255, 255, 0.98);
+        width: 100%;
+        height: calc(100vh - 70px);
+        text-align: center;
+        transition: left 0.3s ease;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 1.5rem 0;
+        gap: 0.5rem;
+        z-index: 999;
+        overflow-y: auto;
+        overflow-x: hidden;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .admin-nav-toggle:checked ~ .admin-nav {
+        left: 0;
+    }
+    
+    .admin-nav a {
+        width: 85%;
+        max-width: 300px;
+        padding: 0.9rem 1.25rem;
+        font-size: 1rem;
+        text-align: center;
+        display: block;
+        color: var(--color-dark) !important;
+        background: white;
+        border-radius: 8px;
+        margin: 0 auto;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+    }
+    
+    .admin-nav a:hover,
+    .admin-nav a.active {
+        background: var(--color-light-gray);
+        color: var(--color-primary) !important;
+    }
+    
+    .admin-nav a.logout-btn {
+        background: var(--color-danger);
+        color: white !important;
+        margin-top: 1rem;
+    }
+    
+    .admin-nav a.logout-btn:hover {
+        background: #dc2626;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .coupons-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .rooms-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .stat-value {
+        font-size: 1.75rem;
+    }
+    
+    .modal-content {
+        margin: 1rem;
+    }
+    
+    .price-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .login-box {
+        padding: 2rem;
+    }
+    
+    .addons-pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-header h1 {
+        font-size: 1.2rem;
+    }
+    
+    .logout-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ======================================== */
+/* ENHANCED ADMIN NAVBAR STYLING */
+/* ======================================== */
+
+.admin-header {
+    background: linear-gradient(135deg, #8b0000 0%, #5a0000 50%, #3d0000 100%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-header h1 {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.5px;
+}
+
+.admin-nav {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.admin-nav a {
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    border-radius: 8px;
+}
+
+.admin-nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.admin-nav a:hover::before {
+    left: 100%;
+}
+
+.admin-nav a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.admin-nav a.active {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+    color: #8b0000;
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+}
+
+.admin-nav .logout-btn {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.3) 0%, rgba(220, 38, 38, 0.3) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-nav .logout-btn:hover {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.5) 0%, rgba(220, 38, 38, 0.5) 100%);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
+}
+
+/* ======================================== */
+/* ENHANCED COUPONS PAGE STYLING */
+/* ======================================== */
+
+/* Create Coupon Section Enhancement */
+.create-coupon-section .section-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.create-coupon-section .section-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #8b0000, #d97706, #10b981, #3b82f6, #8b0000);
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.create-coupon-section h2 {
+    color: #8b0000;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.create-coupon-section h2::before {
+    content: '🎟️';
+    font-size: 2rem;
+}
+
+/* Enhanced Form Inputs */
+.create-coupon-section .form-group input,
+.create-coupon-section .form-group select {
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.create-coupon-section .form-group input:focus,
+.create-coupon-section .form-group select:focus {
+    border-color: #8b0000;
+    box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.create-coupon-section .form-group input:hover,
+.create-coupon-section .form-group select:hover {
+    border-color: #d97706;
+}
+
+/* Enhanced Buttons */
+.create-coupon-section .btn-primary {
+    background: linear-gradient(135deg, #8b0000 0%, #6b0000 100%);
+    box-shadow: 0 4px 16px rgba(139, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.create-coupon-section .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.create-coupon-section .btn-primary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.create-coupon-section .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(139, 0, 0, 0.4);
+}
+
+.create-coupon-section .btn-secondary {
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    color: white;
+    box-shadow: 0 4px 16px rgba(107, 114, 128, 0.3);
+}
+
+.create-coupon-section .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(107, 114, 128, 0.4);
+}
+
+/* Enhanced Coupon Cards */
+.coupons-list-section .section-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.coupons-list-section .section-header h2 {
+    color: #8b0000;
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.coupons-list-section .section-header h2::before {
+    content: '📋';
+    font-size: 2rem;
+}
+
+.stats-pills {
+    background: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-pill {
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.stat-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #8b0000;
+}
+
+/* Premium Coupon Card Design */
+.coupon-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fefefe 50%, #f8f9fa 100%);
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.coupon-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #8b0000, #d97706, #10b981, #3b82f6);
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.coupon-card:hover::before {
+    opacity: 1;
+}
+
+.coupon-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+    border-color: transparent;
+}
+
+.coupon-card.expired {
+    opacity: 0.7;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    filter: grayscale(0.5);
+}
+
+.coupon-code {
+    font-family: 'Courier New', monospace;
+    font-size: 1.75rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #8b0000 0%, #d97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.75rem;
+}
+
+.coupon-discount {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 1rem 0;
+    text-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.coupon-status {
+    padding: 0.375rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.coupon-status.active {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    color: #065f46;
+    border: 2px solid #10b981;
+}
+
+.coupon-status.expired {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    color: #991b1b;
+    border: 2px solid #ef4444;
+}
+
+.coupon-details {
+    background: linear-gradient(135deg, #f8f9fa 0%, #f3f4f6 100%);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    border: 1px solid #e5e7eb;
+}
+
+.coupon-details strong {
+    color: #8b0000;
+    font-weight: 700;
+}
+
+.coupon-actions {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px dashed #e5e7eb;
+}
+
+.coupon-actions .btn-edit {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.coupon-actions .btn-edit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4);
+}
+
+.coupon-actions .btn-delete {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.coupon-actions .btn-delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+}
+
+/* Enhanced Statistics Section */
+.stats-section .section-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e5e7eb;
+}
+
+.stats-section h2 {
+    color: #8b0000;
+    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.stats-section h2::before {
+    content: '📊';
+    font-size: 2rem;
+}
+
+.stats-section .stat-box {
+    background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.stats-section .stat-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: #8b0000;
+}
+
+.stats-section .stat-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.stats-section .stat-value {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #8b0000 0%, #d97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Empty State Enhancement */
+.empty-state {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f3f4f6 100%);
+    border-radius: 16px;
+    border: 2px dashed #d1d5db;
+}
+
+.empty-icon {
+    font-size: 5rem;
+    opacity: 0.3;
+    filter: grayscale(1);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.empty-state p {
+    font-size: 1.125rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.empty-state small {
+    color: #9ca3af;
+    font-size: 0.95rem;
+}
+
+/* ======================================== */
+/* REFINED COUPON CARD HOVER - RED OUTLINE */
+/* ======================================== */
+
+/* Remove rainbow gradient, use clean red outline */
+.coupon-card::before {
+    display: none;
+}
+
+.coupon-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fefefe 50%, #f8f9fa 100%);
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.coupon-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 32px rgba(139, 0, 0, 0.2);
+    border: 3px solid #8b0000;
+}
+
+/* Remove rainbow from create section */
+.create-coupon-section .section-card::before {
+    display: none;
+}
+
+.create-coupon-section .section-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ======================================== */
+/* ENHANCED STYLING FOR ALL ADMIN PAGES */
+/* ======================================== */
+
+/* Universal Section Card Enhancement */
+.dashboard-main .section-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.dashboard-main .section-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Enhanced Section Headers for All Pages */
+.section-card h2,
+.dashboard-card h2 {
+    color: #8b0000;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #f3f4f6;
+    position: relative;
+}
+
+.section-card h2::after,
+.dashboard-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #8b0000 0%, #d97706 100%);
+    border-radius: 2px;
+}
+
+/* Enhanced Form Inputs for All Admin Pages */
+.dashboard-main .form-group input,
+.dashboard-main .form-group select,
+.dashboard-main .form-group textarea,
+.dashboard-card .form-group input,
+.dashboard-card .form-group select,
+.dashboard-card .form-group textarea {
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.dashboard-main .form-group input:focus,
+.dashboard-main .form-group select:focus,
+.dashboard-main .form-group textarea:focus,
+.dashboard-card .form-group input:focus,
+.dashboard-card .form-group select:focus,
+.dashboard-card .form-group textarea:focus {
+    border-color: #8b0000;
+    box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.dashboard-main .form-group input:hover,
+.dashboard-main .form-group select:hover,
+.dashboard-main .form-group textarea:hover,
+.dashboard-card .form-group input:hover,
+.dashboard-card .form-group select:hover,
+.dashboard-card .form-group textarea:hover {
+    border-color: #d97706;
+}
+
+/* Enhanced Buttons for All Admin Pages */
+.dashboard-main .btn-primary,
+.dashboard-card .btn-primary,
+.dashboard-main .save-btn,
+.dashboard-card .save-btn {
+    background: linear-gradient(135deg, #8b0000 0%, #6b0000 100%);
+    box-shadow: 0 4px 16px rgba(139, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.dashboard-main .btn-primary:hover,
+.dashboard-card .btn-primary:hover,
+.dashboard-main .save-btn:hover,
+.dashboard-card .save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(139, 0, 0, 0.4);
+}
+
+.dashboard-main .btn-secondary,
+.dashboard-card .btn-secondary {
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    color: white;
+    box-shadow: 0 4px 16px rgba(107, 114, 128, 0.3);
+}
+
+.dashboard-main .btn-secondary:hover,
+.dashboard-card .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(107, 114, 128, 0.4);
+}
+
+/* Enhanced Menu Items Grid (for menu.php) */
+.menu-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.menu-item-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.menu-item-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: #8b0000;
+}
+
+.menu-item-card h4 {
+    color: #8b0000;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.menu-item-card .item-status {
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.menu-item-card .item-status.active {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    color: #065f46;
+    border: 2px solid #10b981;
+}
+
+.menu-item-card .item-status.inactive {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    color: #991b1b;
+    border: 2px solid #ef4444;
+}
+
+/* Enhanced Queries/Messages Table */
+.data-table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.data-table thead {
+    background: linear-gradient(135deg, #f8f9fa 0%, #f3f4f6 100%);
+}
+
+.data-table th {
+    padding: 1.25rem 1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.875rem;
+    border-bottom: 3px solid #e5e7eb;
+}
+
+.data-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 50%, #fef2f2 100%);
+    transform: scale(1.01);
+}
+
+.data-table td {
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+/* Enhanced Action Buttons in Tables */
+.action-buttons button {
+    padding: 0.625rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.action-buttons .btn-view {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.action-buttons .btn-view:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.action-buttons .btn-keep {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.action-buttons .btn-keep:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.action-buttons .btn-unkeep {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.action-buttons .btn-unkeep:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+.action-buttons .btn-delete {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.action-buttons .btn-delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Enhanced Toggle Slider (for Queries page) */
+.toggle-slider {
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    border: 2px solid #d1d5db;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-option {
+    transition: all 0.3s ease;
+}
+
+.toggle-option.active {
+    background: linear-gradient(135deg, #8b0000 0%, #6b0000 100%);
+    color: white;
+    box-shadow: 0 4px 16px rgba(139, 0, 0, 0.3);
+}
+
+.toggle-option:hover:not(.active) {
+    background: rgba(139, 0, 0, 0.1);
+    color: #8b0000;
+}
+
+/* Enhanced Room Price Cards (for pricing.php) */
+.room-price-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.room-price-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: #8b0000;
+}
+
+.room-price-card h3 {
+    color: #8b0000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+.current-price {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border: 2px solid #fecaca;
+    box-shadow: 0 2px 8px rgba(139, 0, 0, 0.1);
+}
+
+/* Enhanced Add-ons Pricing Grid */
+.addon-price-item {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.addon-price-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: #8b0000;
+}
+
+.addon-price-item label {
+    color: #8b0000;
+    font-weight: 700;
+}
+
+/* Enhanced Overview Stats (for dashboard.php) */
+.overview-section .stat-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.overview-section .stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.overview-section .stat-card.primary {
+    border-left: 5px solid #8b0000;
+}
+
+.overview-section .stat-card.success {
+    border-left: 5px solid #10b981;
+}
+
+.overview-section .stat-card.info {
+    border-left: 5px solid #3b82f6;
+}
+
+.overview-section .stat-card.warning {
+    border-left: 5px solid #f59e0b;
+}
+
+/* Enhanced Info Box */
+.info-box {
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.05) 0%, rgba(139, 0, 0, 0.1) 100%);
+    border-left: 5px solid #8b0000;
+    box-shadow: 0 4px 16px rgba(139, 0, 0, 0.1);
+}
+
+/* Enhanced Admin Tool Cards */
+.admin-tool-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.admin-tool-card:hover {
+    border-color: #8b0000;
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(139, 0, 0, 0.2);
+}
+
+.admin-tool-card h3 {
+    background: linear-gradient(135deg, #8b0000 0%, #d97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Enhanced Modal for All Pages */
+.modal-content {
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #8b0000 0%, #6b0000 50%, #5a0000 100%);
+}
+
+.modal-body {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+/* Success/Error Message Enhancement */
+.success-message {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    border: 2px solid #10b981;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.2);
+    font-weight: 600;
+}
+
+.error-message {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    border: 2px solid #ef4444;
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.2);
+    font-weight: 600;
+}
+
+/* ======================================== */
+/* ADMIN MENU PAGE - ACTIVATE/DEACTIVATE BUTTONS */
+/* ======================================== */
+
+/* Activate Button (Green) */
+.btn-success,
+.btn.btn-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: 2px solid #10b981;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover,
+.btn.btn-success:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+    border-color: #059669;
+}
+
+/* Deactivate Button (Orange/Warning) */
+.btn-warning,
+.btn.btn-warning {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    border: 2px solid #f59e0b;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover,
+.btn.btn-warning:hover {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4);
+    border-color: #d97706;
+}
+
+/* Small Button Size */
+.btn-small,
+.btn.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Menu Item Actions Container */
+.menu-item-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.menu-item-actions form {
+    margin: 0;
+}
+
+.menu-item-actions button {
+    white-space: nowrap;
+}
+
+/* Enhanced Menu Item Card Actions */
+.menu-item-card .action-buttons,
+.menu-item-card .menu-item-actions {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px dashed #e5e7eb;
+}
+
+/* Edit Button Enhancement */
+.btn-edit,
+.btn.btn-edit {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border: 2px solid #3b82f6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-edit:hover,
+.btn.btn-edit:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+    border-color: #2563eb;
+}
+
+/* Delete Button Enhancement for Menu */
+.menu-item-card .btn-delete,
+.menu-item-actions .btn-delete {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    border: 2px solid #ef4444;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.menu-item-card .btn-delete:hover,
+.menu-item-actions .btn-delete:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+    border-color: #dc2626;
+}
+
+/* Button Icons/Emojis Enhancement */
+.btn-success::before {
+    content: '✓ ';
+    font-weight: bold;
+}
+
+.btn-warning::before {
+    content: '⏸ ';
+    font-weight: bold;
+}
+
+.btn-edit::before {
+    content: '✏️ ';
+}
+
+.btn-delete::before {
+    content: '🗑️ ';
+}
+
+/* Menu Table Enhancement */
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.menu-table thead {
+    background: linear-gradient(135deg, #f8f9fa 0%, #f3f4f6 100%);
+}
+
+.menu-table th {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.875rem;
+    border-bottom: 3px solid #e5e7eb;
+}
+
+.menu-table td {
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.menu-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.menu-table tbody tr:hover {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 50%, #fef2f2 100%);
+    transform: scale(1.01);
+}
+
+/* Status Badge in Menu Table */
+.menu-table .status-badge {
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.menu-table .status-badge.active {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    color: #065f46;
+    border: 2px solid #10b981;
+}
+
+.menu-table .status-badge.inactive {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    color: #991b1b;
+    border: 2px solid #ef4444;
+}
+
+/* ======================================== */
+/* ADMIN MENU PAGE - ADD ITEM FORM ALIGNMENT */
+/* ======================================== */
+
+/* Level the Add Item button with form inputs */
+.section-card .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 1.25rem;
+    align-items: end;
+}
+
+.section-card .form-grid .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.section-card .form-grid .form-group button {
+    margin-top: 0;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    white-space: nowrap;
+}
+
+/* Ensure labels and inputs are properly spaced */
+.section-card .form-grid .form-group label {
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* ======================================== */
+/* ENHANCED EDIT MODAL STYLING */
+/* ======================================== */
+
+/* Modal Overlay Enhancement */
+#editModal.modal {
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    animation: fadeIn 0.3s ease;
+}
+
+/* Modal Content Enhancement */
+#editModal .modal-content {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    max-width: 600px;
+    width: 90%;
+    padding: 0;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+    border: 3px solid #e5e7eb;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Modal Header with Gradient */
+#editModal .modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #8b0000, #d97706, #10b981, #3b82f6, #8b0000);
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* Modal Title Styling */
+#editModal h2 {
+    background: linear-gradient(135deg, #8b0000 0%, #6b0000 100%);
+    color: white;
+    padding: 1.75rem 2rem;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 0;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+#editModal h2::before {
+    content: '✏️';
+    font-size: 1.75rem;
+}
+
+#editModal h2::after {
+    display: none;
+}
+
+/* Close Button Enhancement */
+#editModal .close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.75rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 10;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#editModal .close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Modal Form Container */
+#editModal form {
+    padding: 2rem;
+}
+
+/* Enhanced Form Groups in Modal */
+#editModal .form-group {
+    margin-bottom: 1.5rem;
+}
+
+#editModal .form-group:last-child {
+    margin-bottom: 0;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e5e7eb;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+#editModal .form-group label {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+#editModal .form-group input,
+#editModal .form-group select {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+#editModal .form-group input:focus,
+#editModal .form-group select:focus {
+    border-color: #8b0000;
+    box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.1);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+#editModal .form-group input:hover,
+#editModal .form-group select:hover {
+    border-color: #d97706;
+}
+
+/* Modal Buttons Enhancement */
+#editModal .btn {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+#editModal .btn-primary {
+    background: linear-gradient(135deg, #8b0000 0%, #6b0000 100%);
+    color: white;
+    box-shadow: 0 4px 16px rgba(139, 0, 0, 0.3);
+}
+
+#editModal .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(139, 0, 0, 0.4);
+}
+
+#editModal .btn-secondary {
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    color: white;
+    box-shadow: 0 4px 16px rgba(107, 114, 128, 0.3);
+}
+
+#editModal .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(107, 114, 128, 0.4);
+}
+
+/* Add icons to modal buttons */
+#editModal .btn-primary::before {
+    content: '💾 ';
+    margin-right: 0.5rem;
+}
+
+#editModal .btn-secondary::before {
+    content: '✖️ ';
+    margin-right: 0.5rem;
+}
+
+/* Modal Animation */
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+#editModal.modal[style*="display: flex"] .modal-content,
+#editModal.modal.active .modal-content {
+    animation: modalSlideIn 0.4s ease;
+}
+
+/* Responsive adjustments for Add Item form */
+@media (max-width: 768px) {
+    .section-card .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .section-card .form-grid .form-group button {
+        width: 100%;
+        height: auto;
+        padding: 0.875rem 1.5rem;
+    }
+    
+    #editModal .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    #editModal form {
+        padding: 1.5rem;
+    }
+    
+    #editModal .form-group:last-child {
+        flex-direction: column;
+    }
+    
+    #editModal .btn {
+        width: 100%;
+    }
+}
+
+/* Table Responsive Enhancement */
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Enhanced Add New Section */
+.section-card h2[style*="Add"] {
+    color: #8b0000;
+}
+
+/* Add Item Button Icon */
+.section-card .form-grid .btn-primary::before {
+    content: '➕ ';
+    margin-right: 0.5rem;
+}
+
+/* ======================================== */
+/* ADMIN COUPONS PAGE - LEVELED FORM */
+/* ======================================== */
+
+/* Level the Create Coupon form buttons with inputs */
+.create-coupon-section .form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    align-items: center;
+}
+
+.create-coupon-section .form-actions button {
+    height: 46px;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Adjust form grid to accommodate buttons at the end */
+.create-coupon-section .form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 0;
+}
+
+/* Make form actions part of the grid */
+.create-coupon-section form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    align-items: end;
+}
+
+.create-coupon-section .form-grid {
+    display: contents;
+}
+
+.create-coupon-section .form-actions {
+    grid-column: span 3;
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e5e7eb;
+}
+
+/* Remove blue outline/highlight from all buttons */
+.create-coupon-section button:focus,
+.create-coupon-section button:active,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-success:focus,
+.btn-success:active,
+.btn-danger:focus,
+.btn-danger:active,
+.btn-edit:focus,
+.btn-edit:active,
+.btn-delete:focus,
+.btn-delete:active {
+    outline: none !important;
+    box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.15) !important;
+}
+
+/* Specific fix for deactivate button - remove blue highlight */
+.coupon-actions .btn-edit:focus,
+.coupon-actions .btn-edit:active {
+    outline: none !important;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3) !important;
+}
+
+/* Remove default browser focus styles */
+button:focus-visible {
+    outline: none !important;
+}
+
+button::-moz-focus-inner {
+    border: 0 !important;
+}
+
+/* Enhanced button styling for coupons page */
+.create-coupon-section .btn-primary {
+    background: linear-gradient(135deg, #8b0000 0%, #6b0000 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 16px rgba(139, 0, 0, 0.3);
+}
+
+.create-coupon-section .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(139, 0, 0, 0.4);
+}
+
+.create-coupon-section .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 16px rgba(139, 0, 0, 0.3) !important;
+}
+
+.create-coupon-section .btn-secondary {
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 16px rgba(107, 114, 128, 0.3);
+}
+
+.create-coupon-section .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(107, 114, 128, 0.4);
+}
+
+.create-coupon-section .btn-secondary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 16px rgba(107, 114, 128, 0.3) !important;
+}
+
+/* Add icons to coupon form buttons */
+.create-coupon-section .btn-primary::before {
+    content: '🎟️ ';
+    margin-right: 0.5rem;
+}
+
+.create-coupon-section .btn-secondary::before {
+    content: '🔄 ';
+    margin-right: 0.5rem;
+}
+
+/* Responsive adjustments for coupon form */
+@media (max-width: 1024px) {
+    .create-coupon-section form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .create-coupon-section .form-actions {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .create-coupon-section form {
+        grid-template-columns: 1fr;
+    }
+    
+    .create-coupon-section .form-actions {
+        grid-column: span 1;
+        flex-direction: column;
+    }
+    
+    .create-coupon-section .form-actions button {
+        width: 100%;
+    }
+}
+
+/* Fix for coupon card action buttons - remove blue outline */
+.coupon-card .coupon-actions button:focus,
+.coupon-card .coupon-actions button:active,
+.coupon-card .coupon-actions a:focus,
+.coupon-card .coupon-actions a:active {
+    outline: none !important;
+}
+
+.coupon-card .btn-edit:focus,
+.coupon-card .btn-edit:active {
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4) !important;
+}
+
+.coupon-card .btn-delete:focus,
+.coupon-card .btn-delete:active {
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4) !important;
+}
+
+/* Remove blue highlight from all interactive elements */
+a:focus,
+a:active,
+input:focus,
+input:active,
+select:focus,
+select:active,
+textarea:focus,
+textarea:active {
+    outline: none !important;
+}
+
+/* Custom focus styles for inputs (not blue) */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #8b0000 !important;
+    box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.1) !important;
+}
+
+/* Ensure form labels are properly aligned */
+.create-coupon-section .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* Ensure all form inputs have consistent height */
+.create-coupon-section .form-group input,
+.create-coupon-section .form-group select {
+    height: 46px;
+    padding: 0 0.75rem;
+}
+
+/* ======================================== */
+/* ADMIN COUPONS PAGE - FIXED FORM LEVELING */
+/* ======================================== */
+
+/* Remove icons from buttons */
+.create-coupon-section .btn-primary::before,
+.create-coupon-section .btn-secondary::before {
+    content: none !important;
+    display: none !important;
+}
+
+/* Reset and fix form layout */
+.create-coupon-section form {
+    display: block;
+}
+
+.create-coupon-section .form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+    align-items: start;
+}
+
+/* Ensure all form groups have consistent structure */
+.create-coupon-section .form-group {
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+}
+
+.create-coupon-section .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    min-height: 20px;
+}
+
+.create-coupon-section .form-group input,
+.create-coupon-section .form-group select {
+    height: 46px;
+    padding: 0 0.75rem;
+    margin-top: auto;
+}
+
+.create-coupon-section .form-group small {
+    display: block;
+    margin-top: 0.25rem;
+    min-height: 18px;
+    font-size: 0.8125rem;
+    color: #6b7280;
+}
+
+/* Form actions styling */
+.create-coupon-section .form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e5e7eb;
+    align-items: center;
+}
+
+.create-coupon-section .form-actions button {
+    height: 46px;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+/* ======================================== */
+/* REMOVE ALL BLUE HIGHLIGHTS - COMPREHENSIVE FIX */
+/* ======================================== */
+
+/* Remove blue outline from ALL elements */
+*:focus,
+*:active,
+*:focus-visible {
+    outline: none !important;
+}
+
+/* Remove blue highlight from buttons */
+button:focus,
+button:active,
+button:focus-visible,
+.btn:focus,
+.btn:active,
+.btn:focus-visible,
+.btn-edit:focus,
+.btn-edit:active,
+.btn-edit:focus-visible,
+a.btn-edit:focus,
+a.btn-edit:active,
+a.btn-edit:focus-visible {
+    outline: none !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    outline-color: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Specific fix for coupon deactivate/edit button */
+.coupon-actions .btn-edit,
+.coupon-actions a.btn-edit,
+.coupon-card .btn-edit,
+.coupon-card a.btn-edit {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.coupon-actions .btn-edit:focus,
+.coupon-actions .btn-edit:active,
+.coupon-actions .btn-edit:focus-visible,
+.coupon-actions a.btn-edit:focus,
+.coupon-actions a.btn-edit:active,
+.coupon-actions a.btn-edit:focus-visible,
+.coupon-card .btn-edit:focus,
+.coupon-card .btn-edit:active,
+.coupon-card .btn-edit:focus-visible,
+.coupon-card a.btn-edit:focus,
+.coupon-card a.btn-edit:active,
+.coupon-card a.btn-edit:focus-visible {
+    outline: none !important;
+    outline-width: 0 !important;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4) !important;
+    border: none !important;
+}
+
+/* Remove blue from links */
+a:focus,
+a:active,
+a:focus-visible {
+    outline: none !important;
+    outline-width: 0 !important;
+}
+
+/* Override any browser default focus styles */
+:focus {
+    outline: none !important;
+}
+
+::-moz-focus-inner {
+    border: 0 !important;
+}
+
+::-moz-focus-outer {
+    border: 0 !important;
+}
+
+/* Custom focus for form inputs (red, not blue) */
+.create-coupon-section input:focus,
+.create-coupon-section select:focus,
+.create-coupon-section textarea:focus {
+    border-color: #8b0000 !important;
+    box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.1) !important;
+    outline: none !important;
+}
+
+/* Ensure buttons have proper focus without blue */
+.create-coupon-section button:focus,
+.create-coupon-section button:active {
+    outline: none !important;
+    box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.15) !important;
+}
+
+.create-coupon-section .btn-secondary:focus,
+.create-coupon-section .btn-secondary:active {
+    box-shadow: 0 0 0 4px rgba(107, 114, 128, 0.15) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .create-coupon-section .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .create-coupon-section .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .create-coupon-section .form-actions {
+        flex-direction: column;
+    }
+    
+    .create-coupon-section .form-actions button {
+        width: 100%;
+    }
+}
+
+/* Additional fix for webkit browsers */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-focus-ring-color: transparent !important;
+}
+
+/* Remove blue from all coupon page buttons */
+.coupons-list-section button:focus,
+.coupons-list-section button:active,
+.coupons-list-section a:focus,
+.coupons-list-section a:active {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Ensure deactivate button never shows blue */
+a[href*="toggle"]:focus,
+a[href*="toggle"]:active,
+.btn-edit[href*="toggle"]:focus,
+.btn-edit[href*="toggle"]:active {
+    outline: none !important;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* ======================================== */
+/* REMOVE EMOJI FROM DEACTIVATE BUTTON AND FIX BLUE HOVER */
+/* ======================================== */
+
+/* Remove emoji from edit button */
+.btn-edit::before,
+.coupon-actions .btn-edit::before,
+.coupon-card .btn-edit::before,
+a.btn-edit::before {
+    content: none !important;
+    display: none !important;
+}
+
+/* Override the blue hover color for deactivate/edit button */
+.coupon-actions .btn-edit,
+.coupon-card .btn-edit,
+a.btn-edit {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+    color: white !important;
+    border: 2px solid #f59e0b !important;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3) !important;
+}
+
+.coupon-actions .btn-edit:hover,
+.coupon-card .btn-edit:hover,
+a.btn-edit:hover {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+    border-color: #d97706 !important;
+    box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4) !important;
+    color: white !important;
+}
+
+.coupon-actions .btn-edit:active,
+.coupon-card .btn-edit:active,
+a.btn-edit:active {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+    transform: translateY(0) !important;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* Remove any blue color from links styled as buttons */
+a.btn-edit,
+a.btn-edit:link,
+a.btn-edit:visited,
+a.btn-edit:hover,
+a.btn-edit:active {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/* Ensure no blue background appears */
+.coupon-actions a,
+.coupon-card a {
+    background-color: transparent;
+}
+
+.coupon-actions a:hover,
+.coupon-card a:hover {
+    background-color: transparent;
+}
+
+/* Force orange color for all states */
+.coupon-actions .btn-edit,
+.coupon-actions a.btn-edit,
+.coupon-card .btn-edit,
+.coupon-card a.btn-edit,
+a[class*="btn-edit"] {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+}
+
+.coupon-actions .btn-edit:hover,
+.coupon-actions a.btn-edit:hover,
+.coupon-card .btn-edit:hover,
+.coupon-card a.btn-edit:hover,
+a[class*="btn-edit"]:hover {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+}
+
+/* Remove all emojis from coupon action buttons */
+.coupon-actions button::before,
+.coupon-actions a::before,
+.coupon-card button::before,
+.coupon-card a::before {
+    content: none !important;
+    display: none !important;
+}
+
+/* Specific override for any remaining blue styles */
+.coupon-card .coupon-actions .btn-edit {
+    background-color: #f59e0b !important;
+    background-image: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+}
+
+.coupon-card .coupon-actions .btn-edit:hover {
+    background-color: #d97706 !important;
+    background-image: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important;
+}
+
+/* ======================================== */
+/* ADMIN QUERIES PAGE - REFINED STYLING */
+/* ======================================== */
+
+/* Enhanced Toggle Slider */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.toggle-slider {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 50px;
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.toggle-option {
+    padding: 0.875rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: #6b7280;
+}
+
+.toggle-option.active {
+    background: linear-gradient(135deg, #8b0000 0%, #6b0000 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.25);
+}
+
+.toggle-option:hover:not(.active) {
+    background: #f3f4f6;
+    color: #1a1a1a;
+}
+
+/* Enhanced Data Table */
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e5e7eb;
+}
+
+.data-table thead {
+    background: linear-gradient(135deg, #f8f9fa 0%, #f3f4f6 100%);
+}
+
+.data-table th {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.875rem;
+    border-bottom: 3px solid #e5e7eb;
+}
+
+.data-table td {
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+.data-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 50%, #fef2f2 100%);
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Enhanced Action Buttons in Queries */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.action-buttons button,
+.action-buttons .btn {
+    padding: 0.625rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+}
+
+.action-buttons .btn-view {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+}
+
+.action-buttons .btn-view:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.action-buttons .btn-keep {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.action-buttons .btn-keep:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.action-buttons .btn-unkeep {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+}
+
+.action-buttons .btn-unkeep:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.action-buttons .btn-delete {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+}
+
+.action-buttons .btn-delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Keep Forever Badge */
+.keep-forever-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: #92400e;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 2px solid #fbbf24;
+}
+
+.keep-forever-badge::before {
+    content: '📌';
+    font-size: 0.875rem;
+}
+
+/* Auto-delete Warning */
+.auto-delete-warning {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.375rem 0.75rem;
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    color: #991b1b;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 2px solid #f87171;
+}
+
+.auto-delete-warning::before {
+    content: '⚠️';
+    font-size: 0.875rem;
+}
+
+/* Enhanced Modal for Queries */
+#viewModal .modal-content {
+    max-width: 700px;
+}
+
+#viewModal .modal-header {
+    background: linear-gradient(135deg, #8b0000 0%, #6b0000 100%);
+    padding: 1.75rem 2rem;
+}
+
+#viewModal .modal-header h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+#viewModal .modal-body {
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+#viewModal .detail-group {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+#viewModal .detail-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#viewModal .detail-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+#viewModal .detail-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* Star Rating Display in Modal */
+.star-rating-display {
+    display: flex;
+    gap: 0.25rem;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.star-rating-display .star {
+    color: #fbbf24;
+}
+
+.star-rating-display .star.empty {
+    color: #d1d5db;
+}
+
+/* Email Display */
+.email-display {
+    font-family: 'Courier New', monospace;
+    background: #f3f4f6;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    display: inline-block;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+/* Date Display */
+.date-display {
+    color: #6b7280;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Empty State for Queries */
+.queries-empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f3f4f6 100%);
+    border-radius: 12px;
+    border: 2px dashed #d1d5db;
+}
+
+.queries-empty-state-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.4;
+}
+
+.queries-empty-state-text {
+    font-size: 1.125rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* Section Card Enhancement for Queries */
+.queries-section .section-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e5e7eb;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .data-table {
+        font-size: 0.875rem;
+    }
+    
+    .data-table th,
+    .data-table td {
+        padding: 1rem 0.75rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .action-buttons button {
+        width: 100%;
+    }
+    
+    .toggle-option {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Subtle hover effect for table rows */
+.data-table tbody tr {
+    position: relative;
+}
+
+.data-table tbody tr::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #8b0000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.data-table tbody tr:hover::before {
+    opacity: 1;
+}
+
+/* Message Preview Truncation */
+.message-preview {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Subject Column Enhancement */
+.subject-column {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* Name Column Enhancement */
+.name-column {
+    font-weight: 600;
+    color: #374151;
+}
+
+/* ======================================== */
+/* FIX TOGGLE SWITCH STYLING */
+/* ======================================== */
+
+/* Remove default radio button appearance */
+.toggle-container input[type="radio"] {
+    display: none;
+}
+
+/* Better toggle slider styling */
+.toggle-slider {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 50px;
+    padding: 0.5rem;
+    display: inline-flex;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Toggle option as label */
+.toggle-option {
+    padding: 0.875rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: #6b7280;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    user-select: none;
+}
+
+.toggle-option:hover:not(.active) {
+    background: #f3f4f6;
+    color: #1a1a1a;
+}
+
+.toggle-option.active {
+    background: linear-gradient(135deg, #8b0000 0%, #6b0000 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.25);
+}
+
+/* Remove emoji from toggle if it's causing issues */
+.toggle-option::before {
+    content: '';
+    display: none;
+}
+
+/* ======================================== */
+/* FIX TABLE LAYOUT FOR LONG MESSAGES */
+/* ======================================== */
+
+/* Fixed table layout to prevent breaking - REMOVED conflicting nth-child rules */
+.data-table {
+    table-layout: auto;
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #e5e7eb;
+}
+
+/* Add visible borders to all table cells */
+.data-table th,
+.data-table td {
+    border: 1px solid #e5e7eb;
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.data-table th {
+    background: linear-gradient(135deg, #f8f9fa 0%, #f3f4f6 100%);
+    font-weight: 700;
+    color: #1f2937;
+    text-align: left;
+}
+
+/* Allow wrapping for action buttons column */
+.data-table td:last-child {
+    white-space: normal;
+    overflow: visible;
+}
+
+/* Keep action buttons in a fixed container */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.action-buttons button,
+.action-buttons .btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* Ensure buttons don't break layout */
+.data-table .action-buttons {
+    min-height: 40px;
+    padding: 0.5rem 0;
+}
+
+/* Better email display */
+.data-table .email-display {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+/* Name column styling */
+.data-table .name-column {
+    font-weight: 600;
+    color: #374151;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Subject column styling */
+.data-table .subject-column {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* Date column styling */
+.data-table .date-display {
+    font-size: 0.875rem;
+    color: #6b7280;
+    white-space: nowrap;
+}
+
+/* Responsive table adjustments */
+@media (max-width: 1200px) {
+    .action-buttons button,
+    .action-buttons .btn {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.8125rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Stack table for mobile */
+    .data-table:not(.addons-table) {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .data-table:not(.addons-table) thead {
+        display: none;
+    }
+    
+    .data-table:not(.addons-table) tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 1rem;
+    }
+    
+    .data-table td {
+        display: block;
+        width: 100% !important;
+        max-width: 100% !important;
+        white-space: normal;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #f3f4f6;
+    }
+    
+    .data-table td:last-child {
+        border-bottom: none;
+    }
+    
+    .data-table td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        color: #6b7280;
+        display: block;
+        margin-bottom: 0.25rem;
+        font-size: 0.875rem;
+        text-transform: uppercase;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .action-buttons button,
+    .action-buttons .btn {
+        width: 100%;
+    }
+}
+
+/* Table wrapper with horizontal scroll for overflow */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Ensure table doesn't break container */
+.data-table {
+    min-width: 900px;
+}
+
+/* Better spacing for badges in table */
+.keep-forever-badge,
+.auto-delete-warning {
+    display: inline-flex;
+    margin-top: 0.25rem;
+}
+
+/* ======================================== */
+/* IMPROVED TOGGLE SWITCH BAR STYLING */
+/* ======================================== */
+
+/* Toggle container with better styling */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Toggle button styling */
+.toggle-btn {
+    padding: 1rem 2.5rem;
+    border: none;
+    background: transparent;
+    color: #6b7280;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0.25rem;
+}
+
+.toggle-btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #8b0000, #d97706);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.toggle-btn:hover:not(.active) {
+    background: rgba(139, 0, 0, 0.05);
+    color: #1a1a1a;
+}
+
+.toggle-btn.active {
+    background: linear-gradient(135deg, #8b0000 0%, #6b0000 100%);
+    color: white;
+    box-shadow: 0 4px 16px rgba(139, 0, 0, 0.3);
+}
+
+.toggle-btn.active::before {
+    width: 80%;
+}
+
+/* Remove default button focus */
+.toggle-btn:focus {
+    outline: none;
+}
+
+/* ======================================== */
+/* FADE TRANSITION FOR SECTIONS */
+/* ======================================== */
+
+/* Section containers */
+#contacts-section,
+#reviews-section {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade out animation */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Hidden state with transition */
+.section-hidden {
+    display: none;
+    opacity: 0;
+}
+
+.section-visible {
+    display: block;
+    opacity: 1;
+}
+
+/* Smooth transition for visibility */
+.section-transitioning {
+    animation: fadeOut 0.3s ease-in-out;
+}
+
+/* ======================================== */
+/* ENHANCED SECTION HEADERS */
+/* ======================================== */
+
+/* Section title styling */
+.queries-section h3 {
+    color: #8b0000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #f3f4f6;
+    position: relative;
+}
+
+.queries-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #8b0000 0%, #d97706 100%);
+    border-radius: 2px;
+}
+
+/* ======================================== */
+/* IMPROVED INFO BOX STYLING */
+/* ======================================== */
+
+/* Auto-delete policy info box */
+.info-box {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-left: 5px solid #f59e0b;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+}
+
+.info-box p {
+    margin: 0;
+    color: #92400e;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.info-box strong {
+    color: #78350f;
+    font-weight: 700;
+}
+
+/* ======================================== */
+/* RESPONSIVE TOGGLE */
+/* ======================================== */
+
+@media (max-width: 768px) {
+    .toggle-container {
+        padding: 0.75rem;
+    }
+    
+    .toggle-btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+        margin: 0 0.125rem;
+    }
+    
+    .toggle-btn span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .toggle-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .toggle-btn {
+        width: 100%;
+        justify-content: center;
+        margin: 0;
+    }
+}
+
+/* ======================================== */
+/* SECTION CARD ENHANCEMENT */
+/* ======================================== */
+
+.queries-section .section-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.queries-section .section-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ======================================== */
+/* CENTER TEXT IN COUPON ACTION BUTTONS */
+/* ======================================== */
+
+/* Center text in all coupon action buttons */
+.coupon-actions .btn-edit,
+.coupon-actions .btn-delete,
+.coupon-card .btn-edit,
+.coupon-card .btn-delete,
+.coupon-card .coupon-actions a,
+.coupon-card .coupon-actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Ensure link buttons also center text */
+.coupon-actions a.btn-edit,
+.coupon-actions a.btn-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Remove any padding imbalance */
+.coupon-card .coupon-actions button,
+.coupon-card .coupon-actions a {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* ======================================== */
+/* ADMIN ANALYTICS PAGE - ENHANCED STYLING */
+/* ======================================== */
+
+/* Analytics Dashboard Container */
+.dashboard-container {
+    padding: 2.5rem 0;
+}
+
+/* Enhanced Dashboard Cards for Analytics */
+.dashboard-container .dashboard-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e5e7eb;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.dashboard-container .dashboard-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+}
+
+/* Analytics Card Headers */
+.dashboard-container .dashboard-card h2 {
+    color: #8b0000;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #f3f4f6;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.dashboard-container .dashboard-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #8b0000 0%, #d97706 100%);
+    border-radius: 2px;
+}
+
+/* Chart Container Styling */
+.chart-container {
+    position: relative;
+    height: 400px;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Chart Heights */
+@media (max-width: 768px) {
+    .chart-container {
+        height: 300px;
+        padding: 1rem;
+    }
+    
+    .dashboard-container .dashboard-card {
+        padding: 1.5rem;
+    }
+    
+    .dashboard-container .dashboard-card h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Chart Canvas Styling */
+.chart-container canvas {
+    max-width: 100%;
+    height: 100% !important;
+}
+
+/* Analytics Grid Layout */
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Stats Summary Cards */
+.stats-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.stat-summary-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.stat-summary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.stat-summary-card .stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.stat-summary-card .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #8b0000;
+    margin-bottom: 0.5rem;
+}
+
+.stat-summary-card .stat-label {
+    font-size: 0.95rem;
+    color: #6b7280;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Empty State for Charts */
+.chart-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #9ca3af;
+    text-align: center;
+}
+
+.chart-empty-state-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.chart-empty-state-text {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+/* Chart Legend Styling */
+.chartjs-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.chartjs-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: #374151;
+}
+
+/* Loading State */
+.chart-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #6b7280;
+    font-size: 1.125rem;
+}
+
+.chart-loading::after {
+    content: '...';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+/* ======================================== */
+/* ADMIN PRICING PAGE - ENHANCED STYLING */
+/* ======================================== */
+
+/* Pricing Container */
+.admin-pricing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Current Prices Display */
+.current-prices-display {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 3px solid #f59e0b;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.2);
+}
+
+.current-prices-display h2 {
+    color: #92400e;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.price-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.price-item {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border: 2px solid #fbbf24;
+    font-size: 1rem;
+    color: #78350f;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.price-item strong {
+    color: #92400e;
+    font-size: 0.95rem;
+}
+
+/* Pricing Form Headers */
+.admin-pricing-container h2 {
+    color: #8b0000;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 2.5rem 0 1.5rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #f3f4f6;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.admin-pricing-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #8b0000 0%, #d97706 100%);
+    border-radius: 2px;
+}
+
+/* Pricing Grid */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Pricing Cards */
+.pricing-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: #8b0000;
+}
+
+.pricing-card h3 {
+    color: #8b0000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+/* Price Input Group */
+.pricing-card .price-input-group,
+.addon-section .price-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.pricing-card .price-input-group label,
+.addon-section .price-input-group label {
+    font-weight: 700;
+    color: #1a1a1a;
+    font-size: 0.95rem;
+}
+
+.pricing-card .price-input-group input,
+.addon-section .price-input-group input {
+    padding: 1rem 1.25rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.pricing-card .price-input-group input:focus,
+.addon-section .price-input-group input:focus {
+    border-color: #8b0000;
+    box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.1);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.pricing-card .price-input-group input:hover,
+.addon-section .price-input-group input:hover {
+    border-color: #d97706;
+}
+
+.pricing-card .price-input-group small,
+.addon-section .price-input-group small {
+    color: #6b7280;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Addon Section */
+.addon-section {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border: 2px solid #10b981;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.15);
+}
+
+.addon-section p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.addon-section a {
+    color: #8b0000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.addon-section a:hover {
+    color: #6b0000;
+    text-decoration: underline;
+}
+
+/* Save Button */
+.btn-save {
+    width: 100%;
+    padding: 1.25rem 2rem;
+    background: linear-gradient(135deg, #8b0000 0%, #6b0000 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(139, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.btn-save:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(139, 0, 0, 0.4);
+}
+
+.btn-save:active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(139, 0, 0, 0.3);
+}
+
+/* Info Text Styling */
+.admin-pricing-container > form > p {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f3f4f6;
+    border-radius: 8px;
+    border-left: 4px solid #8b0000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .price-comparison {
+        grid-template-columns: 1fr;
+    }
+    
+    .current-prices-display {
+        padding: 1.5rem;
+    }
+    
+    .pricing-card {
+        padding: 1.5rem;
+    }
+    
+    .addon-section {
+        padding: 1.5rem;
+    }
+    
+    .btn-save {
+        font-size: 1.125rem;
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Price Preview Animation */
+@keyframes priceUpdate {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.price-item.updated {
+    animation: priceUpdate 0.5s ease;
+}
+
+/* Input Number Arrows Styling */
+.pricing-card input[type="number"]::-webkit-inner-spin-button,
+.pricing-card input[type="number"]::-webkit-outer-spin-button,
+.addon-section input[type="number"]::-webkit-inner-spin-button,
+.addon-section input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1;
+    height: 40px;
+}
+
+/* Currency Symbol Enhancement */
+.pricing-card .price-input-group input::before,
+.addon-section .price-input-group input::before {
+    content: '₹';
+    position: absolute;
+    left: 1rem;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+/* ======================================== */
+/* ADD-ONS PAGE - PIN FUNCTIONALITY */
+/* ======================================== */
+
+/* Pin Button Styling */
+.btn-pin-active {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    border: none;
+    font-size: 0.875rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-pin-active:hover {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+}
+
+.btn-pin-inactive {
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+    color: white;
+    border: none;
+    font-size: 0.875rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-pin-inactive:hover {
+    background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(75, 85, 99, 0.3);
+}
+
+.btn-pin {
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+
+.btn-pin:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.btn-pin.pinned {
+    opacity: 1;
+    animation: pinPulse 2s ease-in-out infinite;
+}
+
+@keyframes pinPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Pinned Row Styling */
+.pinned-row {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%) !important;
+    border-left: 4px solid #f59e0b !important;
+}
+
+.pinned-row:hover {
+    background: linear-gradient(135deg, #fde68a 0%, #fcd34d 100%) !important;
+}
+
+/* Addons Table Specific Styling */
+.addons-table th:nth-child(1),
+.addons-table td:nth-child(1) {
+    width: 60px;
+    text-align: center;
+}
+
+.addons-table th:nth-child(2),
+.addons-table td:nth-child(2) {
+    width: 150px;
+}
+
+.addons-table th:nth-child(3),
+.addons-table td:nth-child(3) {
+    width: 100px;
+}
+
+.addons-table th:nth-child(4),
+.addons-table td:nth-child(4) {
+    width: 120px;
+}
+
+.addons-table th:nth-child(5),
+.addons-table td:nth-child(5) {
+    width: 100px;
+    text-align: center;
+}
+
+.addons-table th:nth-child(6),
+.addons-table td:nth-child(6) {
+    width: auto;
+    min-width: 350px;
+}
+
+.addons-table .action-buttons-cell {
+    white-space: nowrap;
+}
+
+.addons-table .action-buttons-cell form {
+    display: inline-block;
+    margin: 0 4px 4px 0;
+}
+
+.addons-table .action-buttons-cell button {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+}
+
+/* Ensure table doesn't overflow */
+.addons-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Responsive design for tablets and phones */
+@media (max-width: 1024px) {
+    .addons-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .addons-table thead,
+    .addons-table tbody,
+    .addons-table tr,
+    .addons-table th,
+    .addons-table td {
+        display: block;
+        width: 100%;
+    }
+    
+    .addons-table thead {
+        display: none;
+    }
+    
+    .addons-table tr {
+        margin-bottom: 1.5rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 1rem;
+        background: white;
+    }
+    
+    .addons-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0;
+        border: none;
+        border-bottom: 1px solid #f3f4f6;
+        text-align: right;
+    }
+    
+    .addons-table td:last-child {
+        border-bottom: none;
+    }
+    
+    .addons-table td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        text-align: left;
+        color: #374151;
+        flex: 0 0 40%;
+    }
+    
+    .addons-table .action-buttons-cell {
+        display: block;
+        white-space: normal;
+    }
+    
+    .addons-table .action-buttons-cell::before {
+        content: 'Actions';
+        display: block;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: #374151;
+    }
+    
+    .addons-table .action-buttons-cell form,
+    .addons-table .action-buttons-cell button {
+        display: inline-block;
+        margin: 0.25rem;
+    }
+}
+
+/* Add-ons Create Form Styling */
+.addon-create-form .form-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 1.25rem;
+    align-items: end;
+}
+
+.addon-create-form .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.addon-create-form .form-group button {
+    height: 46px;
+    padding: 0 2rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .addon-create-form .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .addon-create-form .form-group button {
+        width: 100%;
+    }
+}
+
+
+/* ========================================
+   STAFF MANAGEMENT PAGE STYLES
+   ======================================== */
+
+/* Alert Messages */
+.alert {
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border-left: 4px solid #10b981;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border-left: 4px solid #ef4444;
+}
+
+/* Action Bar */
+.action-bar {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.badge-primary {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.badge-secondary {
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+/* Button Sizes */
+.btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+}
+
+.btn-edit {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #2563eb;
+}
+
+.btn-delete {
+    background-color: #ef4444;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #dc2626;
+}
+
+.btn-danger {
+    background-color: #ef4444;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 2rem;
+    border: 1px solid #888;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #8b0000;
+    box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 0.25rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.btn-secondary {
+    background-color: #6b7280;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #4b5563;
+}
+
+
+/* ======================================== */
+/* ENHANCED BOOKINGS PAGE STYLING */
+/* ======================================== */
+
+/* Filter Form Enhancement */
+.filters select:hover,
+.filters input[type="date"]:hover {
+    border-color: #8b0000 !important;
+}
+
+.filters select:focus,
+.filters input[type="date"]:focus {
+    border-color: #8b0000 !important;
+    box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.1) !important;
+    outline: none;
+}
+
+.filters button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(139, 0, 0, 0.4) !important;
+}
+
+/* Bookings Table Row Hover Enhancement */
+.bookings-table table tbody tr {
+    cursor: pointer;
+}
+
+/* Dashboard Stat Cards Hover Enhancement */
+.dashboard-container .stat-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Room Status Cards Hover */
+.room-status:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Dashboard Card Enhancement */
+.dashboard-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+    border: 2px solid #f1f5f9;
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.dashboard-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Responsive Enhancements for Bookings Table */
+@media (max-width: 1200px) {
+    .bookings-table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .bookings-table table {
+        min-width: 1000px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filters {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .dashboard-container .stat-card {
+        padding: 1.25rem;
+    }
+    
+    .dashboard-container .stat-value {
+        font-size: 2rem;
+    }
+    
+    .room-status {
+        padding: 1.25rem;
+    }
+}
+
+/* Enhanced Empty State for Bookings */
+.bookings-table tbody tr td[colspan] {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+/* Status Badge Animations */
+.status-badge {
+    transition: all 0.2s ease;
+}
+
+.status-badge:hover {
+    transform: scale(1.05);
+}
+
+/* Action Button Enhancement */
+.bookings-table a:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 1px 4px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Filter Label Styling */
+.filter-group label {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Smooth Scrolling for Table */
+.bookings-table {
+    scroll-behavior: smooth;
+}
+
+/* Print Styles for Bookings */
+@media print {
+    .filters,
+    .admin-header,
+    .admin-nav,
+    .bookings-table a {
+        display: none !important;
+    }
+    
+    .bookings-table table {
+        border: 1px solid #000;
+    }
+    
+    .bookings-table th,
+    .bookings-table td {
+        border: 1px solid #000;
+        padding: 0.5rem;
+    }
+}
+
+/* ======================================== */
+/* COMPREHENSIVE ADMIN RESPONSIVE DESIGN */
+/* Following Standard Breakpoints */
+/* ======================================== */
+
+/* Mobile: max-width: 575.98px */
+@media (max-width: 575.98px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .admin-header h1 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .section-card h2 {
+        font-size: 1.25rem;
+    }
+    
+    .form-grid {
+        gap: 0.75rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.875rem;
+        padding: 0.5rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary,
+    .btn-danger,
+    .btn-generate {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    .rooms-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+    
+    .room-number {
+        font-size: 1.5rem;
+    }
+    
+    .room-status {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
+    }
+    
+    .coupon-code {
+        font-size: 1.25rem;
+    }
+    
+    .modal-content {
+        margin: 0.5rem;
+        max-width: calc(100% - 1rem);
+    }
+    
+    .modal-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .modal-body {
+        padding: 1rem;
+    }
+}
+
+/* Tablet: min-width: 768px and max-width: 991.98px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .admin-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .admin-nav {
+        gap: 0.75rem;
+    }
+    
+    .admin-nav a {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .form-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .coupons-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .rooms-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+    
+    .category-header {
+        flex-wrap: wrap;
+    }
+    
+    .price-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+/* Desktop: min-width: 992px and max-width: 1199.98px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .form-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .coupons-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    .rooms-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+/* Extra Large Devices: min-width: 1200px */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .rooms-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+/* Enhanced Mobile Navigation - With Scrollbar for Many Items */
+@media (max-width: 991.98px) {
+    .admin-nav-toggle-label {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        z-index: 1002;
+    }
+    
+    .admin-nav-toggle-label span {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        transition: 0.3s;
+        border-radius: 3px;
+    }
+    
+    .admin-nav-toggle:checked ~ .admin-nav-toggle-label span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .admin-nav-toggle:checked ~ .admin-nav-toggle-label span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .admin-nav-toggle:checked ~ .admin-nav-toggle-label span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    .admin-nav {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: rgba(255, 255, 255, 0.98);
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start;
+        align-items: center;
+        transition: left 0.3s ease;
+        z-index: 1001;
+        gap: 0.5rem;
+        padding: 1.5rem 2rem 2rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    
+    .admin-nav-toggle:checked ~ .admin-nav {
+        left: 0;
+    }
+    
+    .admin-nav a {
+        width: 90%;
+        max-width: 320px;
+        padding: 0.9rem 1.25rem;
+        font-size: 1rem;
+        text-align: center;
+        border-radius: 8px;
+        display: block;
+        color: var(--color-dark) !important;
+        background: white;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+    }
+    
+    .admin-nav a:hover,
+    .admin-nav a.active {
+        background: var(--color-light-gray);
+        color: var(--color-primary) !important;
+    }
+    
+    .admin-nav a.logout-btn {
+        background: var(--color-danger);
+        color: white !important;
+        margin-top: 1rem;
+    }
+    
+    .admin-nav a.logout-btn:hover {
+        background: #dc2626;
+    }
+}
+
+/* Tablet Specific Adjustments */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .admin-nav {
+        padding: 2rem 3rem 3rem;
+        gap: 0.75rem;
+    }
+    
+    .admin-nav a {
+        width: 80%;
+        max-width: 400px;
+        padding: 1rem 1.5rem;
+        font-size: 1.05rem;
+    }
+}
+
+/* Ensure tables are responsive */
+@media (max-width: 991.98px) {
+    .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .data-table thead {
+        display: none;
+    }
+    
+    .data-table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        padding: 1rem;
+    }
+    
+    .data-table tbody td {
+        display: block;
+        text-align: right;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--color-light-gray);
+    }
+    
+    .data-table tbody td:last-child {
+        border-bottom: none;
+    }
+    
+    .data-table tbody td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: 600;
+        color: var(--color-dark);
+    }
+}
+
+/* Coupon Badge Styles */
+.coupon-badge {
+    display: inline-block;
+    background: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    color: #8b0000;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    border: 2px solid #e2e8f0;
+}
+
+.coupon-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-color: #8b0000;
+}
+
+.coupon-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    background: #1a202c;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.coupon-badge:hover .coupon-tooltip {
+    opacity: 1;
+}
+
+/* Responsive adjustments for coupon tooltips */
+@media (max-width: 768px) {
+    .coupon-tooltip {
+        white-space: normal;
+        max-width: 200px;
+        text-align: center;
+    }
+}
