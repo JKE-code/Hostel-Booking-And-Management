@@ -7,6 +7,9 @@
     <title>@yield('title', 'HITAM Hostel Portal — Hyderabad Institute of Technology and Management')</title>
     <meta name="description" content="@yield('meta_description', 'Official Hostel Portal of Hyderabad Institute of Technology and Management (HITAM). Residential accommodations, student facilities, notices, and administration.')">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="{{ asset('images/hitam-logo.jpg') }}">
+
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

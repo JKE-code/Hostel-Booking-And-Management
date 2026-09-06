@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg hitam-navbar sticky-top">
         <div class="container">
             <a class="hitam-brand" href="{{ route('home') }}">
-                <div class="hitam-brand-badge">HITAM</div>
+                <img src="{{ asset('images/hitam-logo.jpg') }}" alt="HITAM Logo" class="hitam-brand-logo">
                 <div class="hitam-brand-text">
                     <div class="hitam-brand-title">Hostel Portal</div>
                     <div class="hitam-brand-sub">Hyderabad Institute of Technology & Management</div>

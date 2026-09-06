@@ -79,6 +79,21 @@ body {
     text-decoration: none;
 }
 
+.hitam-brand-logo {
+    height: 48px;
+    width: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(13, 40, 24, 0.12);
+}
+
+.hitam-brand-logo-footer {
+    height: 52px;
+    width: auto;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    padding: 3px;
+}
+
 .hitam-brand-badge {
     background-color: var(--hitam-primary-dark);
     color: #FFFFFF;

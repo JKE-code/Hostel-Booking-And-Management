@@ -2,11 +2,14 @@
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-4">
-                <div class="d-flex align-items-center gap-2 mb-3">
-                    <span class="hitam-brand-badge py-1 px-2 fs-6">HITAM</span>
-                    <span class="text-white fw-bold fs-5">Hostel Administration</span>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                    <img src="{{ asset('images/hitam-logo.jpg') }}" alt="HITAM Logo" class="hitam-brand-logo-footer">
+                    <div>
+                        <div class="text-white fw-bold fs-5 lh-sm">HITAM Hostels</div>
+                        <div class="small" style="color: var(--hitam-primary-light);">Residential Life Administration</div>
+                    </div>
                 </div>
-                <p class="text-light small pe-lg-4" style="color: #94A3B8 !important;">
+                <p class="small pe-lg-4" style="color: #C8DEC9 !important;">
                     Providing a safe, supportive, and disciplined residential living experience for students of Hyderabad Institute of Technology and Management.
                 </p>
                 <div class="d-flex gap-3 mt-3 text-white-50">
