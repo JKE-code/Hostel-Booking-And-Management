@@ -1,0 +1,395 @@
+:root {
+    --hitam-navy: #0A192F;
+    --hitam-navy-light: #122B4D;
+    --hitam-navy-subtle: #1E3A8A;
+    --hitam-slate: #334155;
+    --hitam-slate-light: #64748B;
+    --hitam-bg: #F8FAFC;
+    --hitam-surface: #FFFFFF;
+    --hitam-border: #E2E8F0;
+    --hitam-border-dark: #CBD5E1;
+    --hitam-gold: #D97706;
+    --hitam-gold-hover: #B45309;
+    --hitam-gold-subtle: #FEF3C7;
+    --hitam-gold-text: #92400E;
+    --hitam-success: #059669;
+    --hitam-warning: #D97706;
+    --hitam-danger: #DC2626;
+    --hitam-info: #2563EB;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--hitam-bg);
+    color: #1E293B;
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+}
+
+/* Institutional Navigation */
+.hitam-topbar {
+    background-color: var(--hitam-navy);
+    color: #94A3B8;
+    font-size: 0.8125rem;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hitam-topbar a {
+    color: #CBD5E1;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.hitam-topbar a:hover {
+    color: #FFFFFF;
+}
+
+.hitam-navbar {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--hitam-border);
+    padding: 14px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.hitam-brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--hitam-navy);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.hitam-brand-badge {
+    background-color: var(--hitam-navy);
+    color: #FFFFFF;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    border-left: 3px solid var(--hitam-gold);
+}
+
+.hitam-brand-text {
+    line-height: 1.15;
+}
+
+.hitam-brand-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--hitam-navy);
+}
+
+.hitam-brand-sub {
+    font-size: 0.725rem;
+    color: var(--hitam-slate-light);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+}
+
+.hitam-nav-link {
+    color: var(--hitam-slate);
+    font-weight: 500;
+    font-size: 0.925rem;
+    padding: 8px 14px !important;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+}
+
+.hitam-nav-link:hover {
+    color: var(--hitam-navy);
+    background-color: rgba(10, 25, 47, 0.04);
+}
+
+.hitam-nav-link.active {
+    color: var(--hitam-navy);
+    font-weight: 600;
+}
+
+/* Institutional Hero Section */
+.hero-section {
+    background: linear-gradient(180deg, #0A192F 0%, #112240 100%);
+    color: #FFFFFF;
+    padding: 72px 0 84px;
+    position: relative;
+    border-bottom: 3px solid var(--hitam-gold);
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(217, 119, 6, 0.15);
+    color: #FBBF24;
+    border: 1px solid rgba(217, 119, 6, 0.35);
+    padding: 4px 14px;
+    border-radius: 50px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #FFFFFF;
+    margin-bottom: 18px;
+    letter-spacing: -0.025em;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: #94A3B8;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 620px;
+}
+
+/* Institutional Buttons */
+.btn-hitam-gold {
+    background-color: var(--hitam-gold);
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 6px;
+    border: 1px solid var(--hitam-gold);
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.btn-hitam-gold:hover {
+    background-color: var(--hitam-gold-hover);
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+}
+
+.btn-hitam-outline-light {
+    background-color: transparent;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-hitam-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+.btn-hitam-navy {
+    background-color: var(--hitam-navy);
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: 9px 20px;
+    border-radius: 6px;
+    border: 1px solid var(--hitam-navy);
+    transition: all 0.2s ease;
+}
+
+.btn-hitam-navy:hover {
+    background-color: var(--hitam-navy-light);
+    color: #FFFFFF;
+}
+
+.btn-hitam-outline-navy {
+    background-color: transparent;
+    color: var(--hitam-navy);
+    border: 1px solid var(--hitam-border-dark);
+    font-weight: 600;
+    padding: 9px 20px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-hitam-outline-navy:hover {
+    background-color: var(--hitam-bg);
+    border-color: var(--hitam-navy);
+    color: var(--hitam-navy);
+}
+
+/* Institutional Cards */
+.hitam-card {
+    background-color: var(--hitam-surface);
+    border: 1px solid var(--hitam-border);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.hitam-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    border-color: #CBD5E1;
+}
+
+.hitam-section-badge {
+    color: var(--hitam-gold);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.hitam-section-title {
+    color: var(--hitam-navy);
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+}
+
+.hitam-section-sub {
+    color: var(--hitam-slate-light);
+    font-size: 1.05rem;
+    max-width: 600px;
+}
+
+/* Status Badges */
+.badge-status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge-active {
+    background-color: #ECFDF5;
+    color: #065F46;
+    border: 1px solid #A7F3D0;
+}
+
+.badge-coming-soon {
+    background-color: #FFFBEB;
+    color: #92400E;
+    border: 1px solid #FDE68A;
+}
+
+/* Facility Box */
+.facility-item {
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid var(--hitam-border);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    height: 100%;
+}
+
+.facility-item:hover {
+    border-color: var(--hitam-navy);
+    box-shadow: 0 4px 14px rgba(10, 25, 47, 0.05);
+}
+
+.facility-icon-wrap {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(10, 25, 47, 0.05);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--hitam-navy);
+    margin-bottom: 16px;
+}
+
+/* Notice Item */
+.notice-row {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--hitam-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.15s ease;
+}
+
+.notice-row:last-child {
+    border-bottom: none;
+}
+
+.notice-row:hover {
+    background-color: #F8FAFC;
+}
+
+.notice-date-box {
+    background: var(--hitam-bg);
+    border: 1px solid var(--hitam-border);
+    border-radius: 6px;
+    padding: 6px 12px;
+    text-align: center;
+    min-width: 70px;
+}
+
+.notice-date-day {
+    font-weight: 700;
+    font-size: 1.15rem;
+    line-height: 1;
+    color: var(--hitam-navy);
+}
+
+.notice-date-month {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--hitam-slate-light);
+}
+
+/* Institutional Footer */
+.hitam-footer {
+    background-color: var(--hitam-navy);
+    color: #94A3B8;
+    padding: 60px 0 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hitam-footer-title {
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.hitam-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hitam-footer-links li {
+    margin-bottom: 10px;
+}
+
+.hitam-footer-links a {
+    color: #94A3B8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.15s ease;
+}
+
+.hitam-footer-links a:hover {
+    color: #FFFFFF;
+}
+
+.hitam-footer-bottom {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.8125rem;
+}
