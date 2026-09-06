@@ -3,14 +3,14 @@
     <div class="hitam-topbar">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center gap-3">
-                <span><i class="bi bi-geo-alt me-1 text-warning"></i> Medchal, Hyderabad, Telangana</span>
-                <span class="d-none d-md-inline">|</span>
-                <span class="d-none d-md-inline"><i class="bi bi-telephone me-1 text-warning"></i> +91 92480 09871</span>
+                <span><i class="bi bi-geo-alt me-1 text-accent"></i> Medchal, Hyderabad, Telangana</span>
+                <span class="d-none d-md-inline text-white-50">|</span>
+                <span class="d-none d-md-inline"><i class="bi bi-telephone me-1 text-accent"></i> +91 92480 09871</span>
             </div>
             <div class="d-flex align-items-center gap-3">
                 <a href="{{ route('public.notices') }}" class="d-none d-sm-inline">Announcements</a>
                 <a href="{{ route('public.contact') }}">Contact Us</a>
-                <a href="{{ route('login') }}" class="fw-semibold text-warning ms-1"><i class="bi bi-person-fill me-1"></i>Portal Login</a>
+                <a href="{{ route('login') }}" class="fw-semibold text-accent ms-1"><i class="bi bi-person-fill me-1"></i>Portal Login</a>
             </div>
         </div>
     </div>
@@ -43,8 +43,8 @@
                             Hostels
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end shadow-sm border-light">
-                            <li><a class="dropdown-item py-2" href="{{ route('public.hostels.boys') }}"><i class="bi bi-building me-2 text-primary"></i>Boys Hostel</a></li>
-                            <li><a class="dropdown-item py-2" href="{{ route('public.hostels.girls') }}"><i class="bi bi-building me-2 text-primary"></i>Girls Hostel</a></li>
+                            <li><a class="dropdown-item py-2" href="{{ route('public.hostels.boys') }}"><i class="bi bi-building me-2 text-forest"></i>Boys Hostel</a></li>
+                            <li><a class="dropdown-item py-2" href="{{ route('public.hostels.girls') }}"><i class="bi bi-building me-2 text-forest"></i>Girls Hostel</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><span class="dropdown-item-text text-muted small py-1"><i class="bi bi-clock-history me-1 text-warning"></i>New Boys Hostel (Coming Soon)</span></li>
                         </ul>
@@ -68,7 +68,7 @@
                         <a class="nav-link hitam-nav-link {{ request()->routeIs('public.contact') ? 'active' : '' }}" href="{{ route('public.contact') }}">Contact</a>
                     </li>
                     <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-                        <a class="btn btn-hitam-navy w-100" href="{{ route('login') }}">
+                        <a class="btn btn-hitam-green w-100" href="{{ route('login') }}">
                             <i class="bi bi-box-arrow-in-right me-1"></i> Sign In
                         </a>
                     </li>

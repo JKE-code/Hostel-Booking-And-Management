@@ -1,21 +1,34 @@
 :root {
-    --hitam-navy: #0A192F;
-    --hitam-navy-light: #122B4D;
-    --hitam-navy-subtle: #1E3A8A;
-    --hitam-slate: #334155;
-    --hitam-slate-light: #64748B;
-    --hitam-bg: #F8FAFC;
-    --hitam-surface: #FFFFFF;
-    --hitam-border: #E2E8F0;
-    --hitam-border-dark: #CBD5E1;
-    --hitam-gold: #D97706;
-    --hitam-gold-hover: #B45309;
-    --hitam-gold-subtle: #FEF3C7;
-    --hitam-gold-text: #92400E;
-    --hitam-success: #059669;
+    /* Forest & Emerald Professional Palette */
+    --hitam-primary-dark: #1B5E20;       /* Primary Deep Emerald / Forest Green */
+    --hitam-primary-medium: #2E7D32;     /* Medium Forest */
+    --hitam-primary-accent: #66BB6A;     /* Vibrant Accent Green */
+    --hitam-primary-light: #A5D6A7;      /* Soft Light Sage Green */
+    --hitam-primary-bg: #E8F5E9;         /* Very Light Mint / Institutional Green Tint */
+    
+    /* Institutional Dark Solids */
+    --hitam-forest-night: #0D2818;      /* Deepest Forest Night (Topbars, Hero base, Footers) */
+    --hitam-forest-card: #153E23;       /* Contrast Green for Dark Cards */
+    --hitam-slate: #334155;             /* Secondary Text */
+    --hitam-slate-light: #64748B;       /* Muted Text */
+    
+    /* Neutrals & Surfaces */
+    --hitam-bg: #F7FAF8;                /* Calm, slightly green-tinted off-white */
+    --hitam-surface: #FFFFFF;           /* Card White */
+    --hitam-border: #E2ECE4;            /* Soft greenish-tinted border */
+    --hitam-border-dark: #C8DEC9;       /* Medium border */
+
+    /* Accent & Action Tokens */
+    --hitam-action: #1B5E20;
+    --hitam-action-hover: #144618;
+    --hitam-action-light: #66BB6A;
+    --hitam-action-light-hover: #4CAF50;
+    
+    /* Status Tokens */
+    --hitam-success: #1B5E20;
     --hitam-warning: #D97706;
     --hitam-danger: #DC2626;
-    --hitam-info: #2563EB;
+    --hitam-info: #0284C7;
 }
 
 body {
@@ -28,15 +41,15 @@ body {
 
 /* Institutional Navigation */
 .hitam-topbar {
-    background-color: var(--hitam-navy);
-    color: #94A3B8;
+    background-color: var(--hitam-forest-night);
+    color: #A5D6A7;
     font-size: 0.8125rem;
-    padding: 6px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(165, 214, 167, 0.15);
 }
 
 .hitam-topbar a {
-    color: #CBD5E1;
+    color: #E8F5E9;
     text-decoration: none;
     transition: color 0.15s ease;
 }
@@ -45,17 +58,21 @@ body {
     color: #FFFFFF;
 }
 
+.hitam-topbar .text-accent {
+    color: var(--hitam-primary-light) !important;
+}
+
 .hitam-navbar {
     background-color: #FFFFFF;
     border-bottom: 1px solid var(--hitam-border);
     padding: 14px 0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 4px rgba(13, 40, 24, 0.04);
 }
 
 .hitam-brand {
     font-weight: 700;
     font-size: 1.25rem;
-    color: var(--hitam-navy);
+    color: var(--hitam-forest-night);
     display: flex;
     align-items: center;
     gap: 12px;
@@ -63,14 +80,14 @@ body {
 }
 
 .hitam-brand-badge {
-    background-color: var(--hitam-navy);
+    background-color: var(--hitam-primary-dark);
     color: #FFFFFF;
     padding: 6px 10px;
     border-radius: 6px;
     font-weight: 800;
     font-size: 0.95rem;
     letter-spacing: 0.04em;
-    border-left: 3px solid var(--hitam-gold);
+    border-left: 3.5px solid var(--hitam-primary-accent);
 }
 
 .hitam-brand-text {
@@ -80,7 +97,7 @@ body {
 .hitam-brand-title {
     font-size: 1.05rem;
     font-weight: 700;
-    color: var(--hitam-navy);
+    color: var(--hitam-forest-night);
 }
 
 .hitam-brand-sub {
@@ -101,32 +118,33 @@ body {
 }
 
 .hitam-nav-link:hover {
-    color: var(--hitam-navy);
-    background-color: rgba(10, 25, 47, 0.04);
+    color: var(--hitam-primary-dark);
+    background-color: var(--hitam-primary-bg);
 }
 
 .hitam-nav-link.active {
-    color: var(--hitam-navy);
+    color: var(--hitam-primary-dark);
     font-weight: 600;
+    background-color: rgba(232, 245, 233, 0.6);
 }
 
 /* Institutional Hero Section */
 .hero-section {
-    background: linear-gradient(180deg, #0A192F 0%, #112240 100%);
+    background: linear-gradient(175deg, #0D2818 0%, #153E23 55%, #1B5E20 100%);
     color: #FFFFFF;
     padding: 72px 0 84px;
     position: relative;
-    border-bottom: 3px solid var(--hitam-gold);
+    border-bottom: 3.5px solid var(--hitam-primary-accent);
 }
 
 .hero-tag {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: rgba(217, 119, 6, 0.15);
-    color: #FBBF24;
-    border: 1px solid rgba(217, 119, 6, 0.35);
-    padding: 4px 14px;
+    background-color: rgba(102, 187, 106, 0.18);
+    color: #A5D6A7;
+    border: 1px solid rgba(165, 214, 167, 0.35);
+    padding: 5px 16px;
     border-radius: 50px;
     font-size: 0.8125rem;
     font-weight: 600;
@@ -145,34 +163,51 @@ body {
 
 .hero-subtitle {
     font-size: 1.15rem;
-    color: #94A3B8;
+    color: #D1E7D3;
     line-height: 1.7;
     margin-bottom: 32px;
     max-width: 620px;
 }
 
-/* Institutional Buttons */
-.btn-hitam-gold {
-    background-color: var(--hitam-gold);
+/* Buttons */
+.btn-hitam-green {
+    background-color: var(--hitam-primary-dark);
     color: #FFFFFF;
     font-weight: 600;
     padding: 10px 24px;
     border-radius: 6px;
-    border: 1px solid var(--hitam-gold);
+    border: 1px solid var(--hitam-primary-dark);
     transition: all 0.2s ease;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 3px rgba(27, 94, 32, 0.2);
 }
 
-.btn-hitam-gold:hover {
-    background-color: var(--hitam-gold-hover);
+.btn-hitam-green:hover {
+    background-color: var(--hitam-action-hover);
     color: #FFFFFF;
-    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+    box-shadow: 0 4px 12px rgba(27, 94, 32, 0.35);
+}
+
+.btn-hitam-accent {
+    background-color: var(--hitam-primary-accent);
+    color: #0D2818;
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 6px;
+    border: 1px solid var(--hitam-primary-accent);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(102, 187, 106, 0.25);
+}
+
+.btn-hitam-accent:hover {
+    background-color: #57A85B;
+    color: #0D2818;
+    box-shadow: 0 4px 14px rgba(102, 187, 106, 0.4);
 }
 
 .btn-hitam-outline-light {
     background-color: transparent;
     color: #FFFFFF;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     font-weight: 600;
     padding: 10px 22px;
     border-radius: 6px;
@@ -180,40 +215,25 @@ body {
 }
 
 .btn-hitam-outline-light:hover {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.1);
     color: #FFFFFF;
     border-color: #FFFFFF;
 }
 
-.btn-hitam-navy {
-    background-color: var(--hitam-navy);
-    color: #FFFFFF;
-    font-weight: 600;
-    padding: 9px 20px;
-    border-radius: 6px;
-    border: 1px solid var(--hitam-navy);
-    transition: all 0.2s ease;
-}
-
-.btn-hitam-navy:hover {
-    background-color: var(--hitam-navy-light);
-    color: #FFFFFF;
-}
-
-.btn-hitam-outline-navy {
+.btn-hitam-outline-green {
     background-color: transparent;
-    color: var(--hitam-navy);
-    border: 1px solid var(--hitam-border-dark);
+    color: var(--hitam-primary-dark);
+    border: 1px solid var(--hitam-primary-medium);
     font-weight: 600;
     padding: 9px 20px;
     border-radius: 6px;
     transition: all 0.2s ease;
 }
 
-.btn-hitam-outline-navy:hover {
-    background-color: var(--hitam-bg);
-    border-color: var(--hitam-navy);
-    color: var(--hitam-navy);
+.btn-hitam-outline-green:hover {
+    background-color: var(--hitam-primary-bg);
+    border-color: var(--hitam-primary-dark);
+    color: var(--hitam-primary-dark);
 }
 
 /* Institutional Cards */
@@ -221,28 +241,32 @@ body {
     background-color: var(--hitam-surface);
     border: 1px solid var(--hitam-border);
     border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 1px 3px rgba(13, 40, 24, 0.03);
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .hitam-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-    border-color: #CBD5E1;
+    box-shadow: 0 8px 20px rgba(13, 40, 24, 0.07);
+    border-color: var(--hitam-border-dark);
 }
 
 .hitam-section-badge {
-    color: var(--hitam-gold);
+    color: var(--hitam-primary-dark);
     text-transform: uppercase;
     font-weight: 700;
     font-size: 0.8125rem;
     letter-spacing: 0.08em;
     margin-bottom: 8px;
     display: inline-block;
+    background-color: var(--hitam-primary-bg);
+    padding: 3px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--hitam-primary-light);
 }
 
 .hitam-section-title {
-    color: var(--hitam-navy);
+    color: var(--hitam-forest-night);
     font-weight: 800;
     font-size: 2rem;
     letter-spacing: -0.02em;
@@ -269,9 +293,9 @@ body {
 }
 
 .badge-active {
-    background-color: #ECFDF5;
-    color: #065F46;
-    border: 1px solid #A7F3D0;
+    background-color: var(--hitam-primary-bg);
+    color: var(--hitam-primary-dark);
+    border: 1px solid var(--hitam-primary-light);
 }
 
 .badge-coming-soon {
@@ -291,20 +315,21 @@ body {
 }
 
 .facility-item:hover {
-    border-color: var(--hitam-navy);
-    box-shadow: 0 4px 14px rgba(10, 25, 47, 0.05);
+    border-color: var(--hitam-primary-medium);
+    box-shadow: 0 4px 14px rgba(27, 94, 32, 0.08);
 }
 
 .facility-icon-wrap {
     width: 48px;
     height: 48px;
-    background-color: rgba(10, 25, 47, 0.05);
+    background-color: var(--hitam-primary-bg);
+    border: 1px solid var(--hitam-primary-light);
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.4rem;
-    color: var(--hitam-navy);
+    color: var(--hitam-primary-dark);
     margin-bottom: 16px;
 }
 
@@ -323,12 +348,12 @@ body {
 }
 
 .notice-row:hover {
-    background-color: #F8FAFC;
+    background-color: var(--hitam-primary-bg);
 }
 
 .notice-date-box {
-    background: var(--hitam-bg);
-    border: 1px solid var(--hitam-border);
+    background: #FFFFFF;
+    border: 1px solid var(--hitam-border-dark);
     border-radius: 6px;
     padding: 6px 12px;
     text-align: center;
@@ -339,7 +364,7 @@ body {
     font-weight: 700;
     font-size: 1.15rem;
     line-height: 1;
-    color: var(--hitam-navy);
+    color: var(--hitam-primary-dark);
 }
 
 .notice-date-month {
@@ -351,10 +376,10 @@ body {
 
 /* Institutional Footer */
 .hitam-footer {
-    background-color: var(--hitam-navy);
-    color: #94A3B8;
+    background-color: var(--hitam-forest-night);
+    color: #C8DEC9;
     padding: 60px 0 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 3px solid var(--hitam-primary-accent);
 }
 
 .hitam-footer-title {
@@ -377,7 +402,7 @@ body {
 }
 
 .hitam-footer-links a {
-    color: #94A3B8;
+    color: #A5D6A7;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.15s ease;
@@ -390,6 +415,16 @@ body {
 .hitam-footer-bottom {
     margin-top: 48px;
     padding-top: 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(165, 214, 167, 0.15);
     font-size: 0.8125rem;
+    color: #8EBA90;
+}
+
+/* Dark Accent Highlights */
+.text-forest {
+    color: var(--hitam-primary-dark) !important;
+}
+
+.text-accent-green {
+    color: var(--hitam-primary-accent) !important;
 }
