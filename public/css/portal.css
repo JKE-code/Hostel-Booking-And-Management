@@ -443,3 +443,160 @@ body {
 .text-accent-green {
     color: var(--hitam-primary-accent) !important;
 }
+
+/* Page Hero Banner */
+.page-hero {
+    background: linear-gradient(175deg, #0D2818 0%, #153E23 65%, #1B5E20 100%);
+    color: #FFFFFF;
+    padding: 52px 0 56px;
+    position: relative;
+    border-bottom: 3px solid var(--hitam-primary-accent);
+}
+
+.page-hero-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.page-hero-sub {
+    font-size: 1.08rem;
+    color: #D1E7D3;
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+.breadcrumb-hitam {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.825rem;
+    color: #A5D6A7;
+    margin-bottom: 14px;
+}
+
+.breadcrumb-hitam a {
+    color: #A5D6A7;
+    text-decoration: none;
+}
+
+.breadcrumb-hitam a:hover {
+    color: #FFFFFF;
+}
+
+/* Nav Pill Customizations */
+.nav-pills-hitam .nav-link {
+    color: var(--hitam-slate);
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 9px 18px;
+    background: #FFFFFF;
+    border: 1px solid var(--hitam-border);
+    transition: all 0.2s ease;
+}
+
+.nav-pills-hitam .nav-link.active {
+    background: var(--hitam-primary-dark);
+    color: #FFFFFF;
+    border-color: var(--hitam-primary-dark);
+}
+
+/* Table Institutional Styles */
+.hitam-table {
+    border: 1px solid var(--hitam-border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #FFFFFF;
+}
+
+.hitam-table thead th {
+    background-color: var(--hitam-primary-bg);
+    color: var(--hitam-forest-night);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 2px solid var(--hitam-border-dark);
+    padding: 14px 18px;
+}
+
+.hitam-table tbody td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--hitam-border);
+    vertical-align: middle;
+    font-size: 0.925rem;
+}
+
+.hitam-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.hitam-table tbody tr:hover {
+    background-color: rgba(232, 245, 233, 0.4);
+}
+
+/* Gallery and Card Overlays */
+.gallery-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--hitam-surface);
+    border: 1px solid var(--hitam-border);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(13, 40, 24, 0.12);
+}
+
+.gallery-img-box {
+    position: relative;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--hitam-forest-night);
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13, 40, 24, 0.85) 0%, transparent 60%);
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+    color: #FFFFFF;
+}
+
+/* Accordion Customization */
+.accordion-hitam .accordion-item {
+    border: 1px solid var(--hitam-border);
+    margin-bottom: 12px;
+    border-radius: 8px !important;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(13, 40, 24, 0.02);
+}
+
+.accordion-hitam .accordion-button {
+    font-weight: 600;
+    color: var(--hitam-forest-night);
+    padding: 18px 20px;
+    background-color: #FFFFFF;
+}
+
+.accordion-hitam .accordion-button:not(.collapsed) {
+    color: var(--hitam-primary-dark);
+    background-color: var(--hitam-primary-bg);
+    box-shadow: none;
+}
+
+.accordion-hitam .accordion-body {
+    padding: 20px;
+    font-size: 0.925rem;
+    line-height: 1.7;
+    color: var(--hitam-slate);
+    background: #FFFFFF;
+}
+

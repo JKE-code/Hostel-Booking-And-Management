@@ -46,7 +46,7 @@
                             <li><a class="dropdown-item py-2" href="{{ route('public.hostels.boys') }}"><i class="bi bi-building me-2 text-forest"></i>Boys Hostel</a></li>
                             <li><a class="dropdown-item py-2" href="{{ route('public.hostels.girls') }}"><i class="bi bi-building me-2 text-forest"></i>Girls Hostel</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><span class="dropdown-item-text text-muted small py-1"><i class="bi bi-clock-history me-1 text-warning"></i>New Boys Hostel (Coming Soon)</span></li>
+                            <li><a class="dropdown-item py-2" href="{{ route('public.hostels.new-boys') }}"><i class="bi bi-cone-striped me-2 text-warning"></i>New Boys Hostel <span class="badge bg-warning-subtle text-warning-emphasis ms-1">Upcoming</span></a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -63,6 +63,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link hitam-nav-link {{ request()->routeIs('public.events*') ? 'active' : '' }}" href="{{ route('public.events') }}">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hitam-nav-link {{ request()->routeIs('public.gallery') ? 'active' : '' }}" href="{{ route('public.gallery') }}">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link hitam-nav-link {{ request()->routeIs('public.downloads') ? 'active' : '' }}" href="{{ route('public.downloads') }}">Downloads</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link hitam-nav-link {{ request()->routeIs('public.contact') ? 'active' : '' }}" href="{{ route('public.contact') }}">Contact</a>
