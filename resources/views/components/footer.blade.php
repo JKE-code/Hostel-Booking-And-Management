@@ -1,6 +1,7 @@
 <footer class="hitam-footer">
     <div class="container">
         <div class="row g-4">
+            <!-- Brand Overview -->
             <div class="col-lg-4">
                 <div class="d-flex align-items-center gap-3 mb-3">
                     <img src="{{ asset('images/hitam-logo.jpg') }}" alt="HITAM Logo" class="hitam-brand-logo-footer">
@@ -9,57 +10,107 @@
                         <div class="small" style="color: var(--hitam-primary-light);">Residential Life Administration</div>
                     </div>
                 </div>
-                <p class="small pe-lg-4" style="color: #C8DEC9 !important;">
-                    Providing a safe, supportive, and disciplined residential living experience for students of Hyderabad Institute of Technology and Management.
+                <p class="small pe-lg-4 mb-3" style="color: #C8DEC9 !important;">
+                    Providing a safe, supportive, and disciplined residential living experience for scholars of Hyderabad Institute of Technology and Management.
                 </p>
-                <div class="d-flex gap-3 mt-3 text-white-50">
-                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle px-2 py-1">Affiliated to JNTUH</span>
-                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle px-2 py-1">NAAC 'A+' Grade</span>
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge-footer-pill">
+                        <i class="bi bi-patch-check-fill me-1 text-success"></i> Affiliated to JNTUH
+                    </span>
+                    <span class="badge-footer-pill">
+                        <i class="bi bi-award-fill me-1 text-warning"></i> NAAC 'A+' Grade
+                    </span>
+                </div>
+                <div class="d-flex gap-2">
+                    <a href="https://www.linkedin.com/school/hitam-hyderabad/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@HITAMHyderabad" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                    <a href="https://www.facebook.com/HITAMHyderabad/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/hitamhyderabad/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
                 </div>
             </div>
 
+            <!-- Quick Navigation -->
             <div class="col-6 col-lg-2">
                 <div class="hitam-footer-title">Navigation</div>
                 <ul class="hitam-footer-links">
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('public.about') }}">About Hostels</a></li>
-                    <li><a href="{{ route('public.facilities') }}">Facilities</a></li>
-                    <li><a href="{{ route('public.mess') }}">Mess Menu</a></li>
-                    <li><a href="{{ route('public.rules') }}">Code of Conduct</a></li>
+                    <li><a href="{{ route('home') }}"><i class="bi bi-chevron-right small text-success"></i> Home</a></li>
+                    <li><a href="{{ route('public.about') }}"><i class="bi bi-chevron-right small text-success"></i> About Hostels</a></li>
+                    <li><a href="{{ route('public.facilities') }}"><i class="bi bi-chevron-right small text-success"></i> Facilities</a></li>
+                    <li><a href="{{ route('public.mess') }}"><i class="bi bi-chevron-right small text-success"></i> Mess Menu</a></li>
+                    <li><a href="{{ route('public.rules') }}"><i class="bi bi-chevron-right small text-success"></i> Code of Conduct</a></li>
                 </ul>
             </div>
 
+            <!-- Hostels & Resources -->
             <div class="col-6 col-lg-2">
-                <div class="hitam-footer-title">Hostels</div>
+                <div class="hitam-footer-title">Residences</div>
                 <ul class="hitam-footer-links">
-                    <li><a href="{{ route('public.hostels.boys') }}">Boys Hostel</a></li>
-                    <li><a href="{{ route('public.hostels.girls') }}">Girls Hostel</a></li>
-                    <li><a href="{{ route('public.hostels.new-boys') }}">New Boys Hostel</a></li>
-                    <li><a href="{{ route('public.downloads') }}">Application Forms</a></li>
-                    <li><a href="{{ route('public.faq') }}">Residential FAQ</a></li>
+                    <li><a href="{{ route('public.hostels.boys') }}"><i class="bi bi-chevron-right small text-success"></i> Boys Hostel</a></li>
+                    <li><a href="{{ route('public.hostels.girls') }}"><i class="bi bi-chevron-right small text-success"></i> Girls Hostel</a></li>
+                    <li><a href="{{ route('public.hostels.new-boys') }}"><i class="bi bi-chevron-right small text-success"></i> New Boys Hostel</a></li>
+                    <li><a href="{{ route('public.downloads') }}"><i class="bi bi-chevron-right small text-success"></i> Application Forms</a></li>
+                    <li><a href="{{ route('public.faq') }}"><i class="bi bi-chevron-right small text-success"></i> Residential FAQ</a></li>
                 </ul>
             </div>
 
+            <!-- Contact & Helpdesk -->
             <div class="col-lg-4">
                 <div class="hitam-footer-title">Contact & Helpdesk</div>
-                <ul class="hitam-footer-links">
-                    <li class="d-flex align-items-start gap-2">
-                        <i class="bi bi-geo-alt text-warning mt-1"></i>
-                        <span>HITAM Campus, Gowdavelly, Medchal, Hyderabad, Telangana - 501401</span>
-                    </li>
-                    <li class="d-flex align-items-center gap-2">
-                        <i class="bi bi-telephone text-warning"></i>
-                        <span>+91 92480 09871, 08418-204066</span>
-                    </li>
-                    <li class="d-flex align-items-center gap-2">
-                        <i class="bi bi-envelope text-warning"></i>
-                        <span>hosteladmin@hitam.org</span>
-                    </li>
-                    <li class="d-flex align-items-center gap-2">
-                        <i class="bi bi-clock text-warning"></i>
-                        <span>Office Hours: 08:30 AM - 05:30 PM (Mon - Sat)</span>
-                    </li>
-                </ul>
+                
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon">
+                        <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+                    <div>
+                        <div class="small text-white-50 fw-semibold mb-1">Campus Location</div>
+                        <a href="https://maps.google.com/?q=Hyderabad+Institute+of+Technology+and+Management+Gowdavelly+Medchal+Hyderabad+Telangana+501401" target="_blank" rel="noopener noreferrer" class="footer-contact-link fw-semibold">
+                            HITAM Campus, Gowdavelly, Medchal, Hyderabad, Telangana - 501401
+                            <i class="bi bi-box-arrow-up-right small ms-1 text-success"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon">
+                        <i class="bi bi-telephone-fill"></i>
+                    </div>
+                    <div>
+                        <div class="small text-white-50 fw-semibold mb-1">Helpline Phone</div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="tel:+919248009871" class="footer-contact-link">+91 92480 09871</a>
+                            <span class="text-white-50">&bull;</span>
+                            <a href="tel:08418204066" class="footer-contact-link">08418-204066</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon">
+                        <i class="bi bi-envelope-fill"></i>
+                    </div>
+                    <div>
+                        <div class="small text-white-50 fw-semibold mb-1">Email Support</div>
+                        <a href="mailto:hosteladmin@hitam.org" class="footer-contact-link">hosteladmin@hitam.org</a>
+                    </div>
+                </div>
+
+                <div class="footer-contact-item mb-0">
+                    <div class="footer-contact-icon">
+                        <i class="bi bi-clock-fill"></i>
+                    </div>
+                    <div>
+                        <div class="small text-white-50 fw-semibold mb-1">Office Working Hours</div>
+                        <span class="text-white-50">08:30 AM - 05:30 PM (Mon - Sat)</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -75,3 +126,4 @@
         </div>
     </div>
 </footer>
+

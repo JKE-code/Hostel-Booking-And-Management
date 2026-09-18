@@ -36,7 +36,7 @@
             <!-- Item 1 -->
             <div class="col-md-6 col-lg-4">
                 <div class="gallery-card">
-                    <div class="gallery-img-box" style="background-image: linear-gradient(rgba(13,40,24,0.3), rgba(13,40,24,0.7)), url('{{ asset('images/hitam-logo.jpg') }}'); background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #0d2818;">
+                    <div class="gallery-img-box" style="background-image: url('{{ asset('images/hostel-building.jpg') }}'); background-size: cover; background-position: center;">
                         <div class="gallery-overlay">
                             <div>
                                 <span class="badge bg-success mb-1">Boys Block</span>
@@ -51,7 +51,7 @@
             <!-- Item 2 -->
             <div class="col-md-6 col-lg-4">
                 <div class="gallery-card">
-                    <div class="gallery-img-box" style="background: linear-gradient(135deg, #153E23, #1B5E20);">
+                    <div class="gallery-img-box" style="background-image: url('{{ asset('images/student-room.jpg') }}'); background-size: cover; background-position: center;">
                         <div class="gallery-overlay">
                             <div>
                                 <span class="badge bg-success mb-1">Bedrooms</span>
@@ -66,7 +66,7 @@
             <!-- Item 3 -->
             <div class="col-md-6 col-lg-4">
                 <div class="gallery-card">
-                    <div class="gallery-img-box" style="background: linear-gradient(135deg, #0D2818, #2E7D32);">
+                    <div class="gallery-img-box" style="background-image: url('{{ asset('images/dining-hall.jpg') }}'); background-size: cover; background-position: center;">
                         <div class="gallery-overlay">
                             <div>
                                 <span class="badge bg-success mb-1">Mess & Dining</span>

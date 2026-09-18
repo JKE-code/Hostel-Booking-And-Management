@@ -5,11 +5,13 @@
 @section('content')
 <!-- Hero Section -->
 <section class="hero-section">
-    <div class="container">
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+    <div class="container position-relative" style="z-index: 2;">
         <div class="row align-items-center">
             <div class="col-lg-7">
                 <div class="hero-tag">
-                    <i class="bi bi-shield-check"></i>
+                    <span class="status-dot-pulse"></span>
                     <span>Official Residential Life Portal</span>
                 </div>
                 <h1 class="hero-title">
@@ -29,25 +31,31 @@
                 </div>
 
                 <!-- Key Quick Metrics -->
-                <div class="row mt-5 pt-3 border-top border-white border-opacity-10 g-4 text-start">
+                <div class="row mt-5 pt-3 g-3 text-start">
                     <div class="col-4">
-                        <div class="h3 fw-bold text-white mb-0">2+1</div>
-                        <div class="small" style="color: var(--hitam-primary-light);">Hostel Blocks</div>
+                        <div class="hero-stat-card">
+                            <div class="h3 fw-bold text-white mb-0">2+1</div>
+                            <div class="small" style="color: var(--hitam-primary-light);">Hostel Blocks</div>
+                        </div>
                     </div>
                     <div class="col-4">
-                        <div class="h3 fw-bold text-white mb-0">24/7</div>
-                        <div class="small" style="color: var(--hitam-primary-light);">CCTV & Security</div>
+                        <div class="hero-stat-card">
+                            <div class="h3 fw-bold text-white mb-0">24/7</div>
+                            <div class="small" style="color: var(--hitam-primary-light);">CCTV & Security</div>
+                        </div>
                     </div>
                     <div class="col-4">
-                        <div class="h3 fw-bold text-white mb-0">100%</div>
-                        <div class="small" style="color: var(--hitam-primary-light);">Purified RO Water</div>
+                        <div class="hero-stat-card">
+                            <div class="h3 fw-bold text-white mb-0">100%</div>
+                            <div class="small" style="color: var(--hitam-primary-light);">Purified RO Water</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-5 mt-4 mt-lg-0">
                 <!-- Resident Portal Quick Access Card -->
-                <div class="card border-0 shadow-lg" style="background: rgba(13, 40, 24, 0.45); backdrop-filter: blur(12px); border: 1px solid rgba(165, 214, 167, 0.25) !important; border-radius: 12px;">
+                <div class="card border-0 shadow-lg hero-floating-card" style="background: rgba(13, 40, 24, 0.45); backdrop-filter: blur(12px); border: 1px solid rgba(165, 214, 167, 0.25) !important; border-radius: 12px;">
                     <div class="card-body p-4 text-white">
                         <div class="d-flex align-items-center gap-2 mb-3">
                             <span class="badge px-2 py-1 fw-bold" style="background-color: var(--hitam-primary-accent); color: #0D2818;">QUICK ACCESS</span>
@@ -102,7 +110,8 @@
         <div class="row g-4">
             <!-- Boys Hostel -->
             <div class="col-md-4">
-                <div class="card hitam-card h-100">
+                <div class="card hitam-card h-100 card-accent-top">
+                    <img src="{{ asset('images/hostel-building.jpg') }}" class="card-img-top" alt="Boys Hostel" style="height: 180px; object-fit: cover;">
                     <div class="card-body p-4 d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <span class="badge-status badge-active">
@@ -119,7 +128,7 @@
                             <li class="mb-2"><i class="bi bi-check2 text-forest me-2 fw-bold"></i>Solar Water Heating System</li>
                             <li class="mb-2"><i class="bi bi-check2 text-forest me-2 fw-bold"></i>Gymnasium & Indoor Games</li>
                         </ul>
-                        <a href="{{ route('public.hostels.boys') }}" class="btn btn-outline-secondary w-100 fw-semibold text-start d-flex justify-content-between align-items-center">
+                        <a href="{{ route('public.hostels.boys') }}" class="btn btn-hitam-outline-green w-100 fw-semibold text-start d-flex justify-content-between align-items-center">
                             <span>Hostel Details & Layout</span>
                             <i class="bi bi-arrow-right text-forest"></i>
                         </a>
@@ -129,7 +138,8 @@
 
             <!-- Girls Hostel -->
             <div class="col-md-4">
-                <div class="card hitam-card h-100">
+                <div class="card hitam-card h-100 card-accent-top">
+                    <img src="{{ asset('images/student-room.jpg') }}" class="card-img-top" alt="Girls Hostel" style="height: 180px; object-fit: cover;">
                     <div class="card-body p-4 d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <span class="badge-status badge-active">
@@ -146,7 +156,7 @@
                             <li class="mb-2"><i class="bi bi-check2 text-forest me-2 fw-bold"></i>24/7 Monitored Campus Perimeter</li>
                             <li class="mb-2"><i class="bi bi-check2 text-forest me-2 fw-bold"></i>Attached Dining Facility</li>
                         </ul>
-                        <a href="{{ route('public.hostels.girls') }}" class="btn btn-outline-secondary w-100 fw-semibold text-start d-flex justify-content-between align-items-center">
+                        <a href="{{ route('public.hostels.girls') }}" class="btn btn-hitam-outline-green w-100 fw-semibold text-start d-flex justify-content-between align-items-center">
                             <span>Hostel Details & Layout</span>
                             <i class="bi bi-arrow-right text-forest"></i>
                         </a>
@@ -156,7 +166,8 @@
 
             <!-- New Boys Hostel -->
             <div class="col-md-4">
-                <div class="card hitam-card h-100 border-dashed">
+                <div class="card hitam-card h-100 card-accent-top opacity-85">
+                    <img src="{{ asset('images/dining-hall.jpg') }}" class="card-img-top" alt="New Boys Hostel" style="height: 180px; object-fit: cover; filter: grayscale(30%);">
                     <div class="card-body p-4 d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-start mb-3">
                             <span class="badge-status badge-coming-soon">
