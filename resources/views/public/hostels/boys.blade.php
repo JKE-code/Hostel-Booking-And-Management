@@ -180,4 +180,77 @@
         </div>
     </div>
 </section>
+
+{{-- Photo Strip: Visual Hostel Gallery --}}
+<section class="py-5 bg-white border-top">
+    <div class="container py-2">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+            <div>
+                <span class="hitam-section-badge">Visual Tour</span>
+                <h2 class="hitam-section-title mb-0">Inside the Boys Hostel</h2>
+            </div>
+            <a href="{{ route('public.gallery') }}" class="btn btn-sm btn-hitam-outline-green mt-2 mt-sm-0">
+                Full Gallery <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
+        <div class="photo-strip">
+            <div class="photo-strip-item">
+                <img src="{{ asset('images/hostel-building.jpg') }}" alt="Boys Hostel Exterior"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="img-placeholder" style="display:none;">
+                    <i class="bi bi-building"></i>
+                    <span class="img-ph-label">Hostel Exterior</span>
+                </div>
+            </div>
+            <div class="photo-strip-item">
+                <img src="{{ asset('images/student-room.jpg') }}" alt="Furnished Student Room"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="img-placeholder" style="display:none;">
+                    <i class="bi bi-door-open"></i>
+                    <span class="img-ph-label">Student Room</span>
+                </div>
+            </div>
+            <div class="photo-strip-item">
+                <img src="{{ asset('images/dining-hall.jpg') }}" alt="Hostel Dining Hall"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="img-placeholder" style="display:none;">
+                    <i class="bi bi-cup-hot"></i>
+                    <span class="img-ph-label">Dining Hall</span>
+                </div>
+            </div>
+            <div class="photo-strip-item">
+                <div class="img-placeholder h-100" style="min-height:unset;">
+                    <i class="bi bi-dribbble"></i>
+                    <span class="img-ph-label">Sports & Rec</span>
+                    <span class="img-ph-sub">Photo coming soon</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- Warden Quote --}}
+<section class="py-4" style="background: linear-gradient(135deg, #042E16 0%, #064E3B 100%); color: white;">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+                <div class="d-flex align-items-start gap-3">
+                    <i class="bi bi-quote fs-1 text-success opacity-50 mt-n2 flex-shrink-0"></i>
+                    <div>
+                        <p class="fs-5 fw-light fst-italic mb-2" style="line-height:1.7;color:#D1FAE5;">
+                            "We pride ourselves on creating a hostel environment that feels less like accommodation and more like a second home — where discipline nurtures discipline, and community builds character."
+                        </p>
+                        <div class="fw-bold text-white">Prof. V. Ramanjaneyulu</div>
+                        <div class="small" style="color:#6EE7B7;">Chief Warden, HITAM Residential Campus</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a href="{{ route('public.contact') }}" class="btn btn-hitam-accent">
+                    <i class="bi bi-telephone me-1"></i> Contact Boys Hostel Warden
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection

@@ -165,7 +165,7 @@
                 <p class="text-secondary mb-4">
                     The committee performs surprise kitchen audits, verifies grocery quality, checks cooking oil standards, and updates the cyclical menu based on student feedback.
                 </p>
-                <div class="d-flex gap-3">
+                <div class="d-flex flex-wrap gap-3">
                     <a href="{{ route('public.downloads') }}" class="btn btn-hitam-green">
                         <i class="bi bi-download me-1"></i> Download Printable Menu PDF
                     </a>

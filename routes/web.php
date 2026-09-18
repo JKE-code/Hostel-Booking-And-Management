@@ -31,11 +31,45 @@ Route::get('/faq', [PageController::class, 'faq'])->name('public.faq');
 Route::get('/contact', [PageController::class, 'contact'])->name('public.contact');
 Route::post('/contact', [PageController::class, 'submitContact'])->name('public.contact.submit');
 
+use App\Http\Controllers\Student\StudentPortalController;
+use App\Http\Controllers\Admin\AdminPortalController;
+
 /*
 |--------------------------------------------------------------------------
-| Authentication Routes Placeholder
+| Authentication Routes (Preview Mode)
 |--------------------------------------------------------------------------
 */
 Route::get('/login', function () {
-    return redirect()->route('home')->with('info', 'Login authentication will be configured with roles & permissions.');
+    return view('auth.login');
 })->name('login');
+
+Route::get('/signup', function () {
+    return view('auth.signup');
+})->name('signup');
+
+/*
+|--------------------------------------------------------------------------
+| Student Portal Routes
+|--------------------------------------------------------------------------
+*/
+Route::prefix('student')->name('student.')->group(function () {
+    Route::get('/dashboard', [StudentPortalController::class, 'dashboard'])->name('dashboard');
+    Route::get('/room', [StudentPortalController::class, 'room'])->name('room');
+    Route::get('/leaves', [StudentPortalController::class, 'leaves'])->name('leaves');
+    Route::get('/complaints', [StudentPortalController::class, 'complaints'])->name('complaints');
+    Route::get('/mess', [StudentPortalController::class, 'mess'])->name('mess');
+    Route::get('/profile', [StudentPortalController::class, 'profile'])->name('profile');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Warden & Admin Management Portal Routes
+|--------------------------------------------------------------------------
+*/
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [AdminPortalController::class, 'dashboard'])->name('dashboard');
+    Route::get('/allocations', [AdminPortalController::class, 'allocations'])->name('allocations');
+    Route::get('/leaves', [AdminPortalController::class, 'leaves'])->name('leaves');
+    Route::get('/complaints', [AdminPortalController::class, 'complaints'])->name('complaints');
+});
+

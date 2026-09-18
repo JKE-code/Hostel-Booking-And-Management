@@ -38,7 +38,8 @@
                 <img src="{{ asset('images/hitam-logo.jpg') }}" alt="HITAM Logo" class="hitam-brand-logo">
                 <div class="hitam-brand-text">
                     <div class="hitam-brand-title">Hostel Portal</div>
-                    <div class="hitam-brand-sub">Hyderabad Institute of Technology & Management</div>
+                    <div class="hitam-brand-sub d-none d-sm-block">Hyderabad Institute of Technology & Management</div>
+                    <div class="hitam-brand-sub d-sm-none">HITAM Hyderabad</div>
                 </div>
             </a>
 

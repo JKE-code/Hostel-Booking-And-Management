@@ -91,109 +91,129 @@
     </div>
 </section>
 
-<!-- Residential Hostels Overview Section -->
-<section class="py-5">
-    <div class="container py-4">
-        <div class="row justify-content-between align-items-end mb-4">
-            <div class="col-lg-7">
-                <span class="hitam-section-badge">Accommodations</span>
-                <h2 class="hitam-section-title">Hostel Residences</h2>
-                <p class="hitam-section-sub">
-                    HITAM provides designated residential facilities designed to support focused academic growth, personal wellbeing, and active student life.
-                </p>
+<!-- Visual Life & Campus Gallery Highlight Section -->
+<section class="py-5" style="background: #F8FAFC;">
+    <div class="container py-3">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+            <div>
+                <span class="hitam-section-badge">Life on Campus</span>
+                <h2 class="hitam-section-title mb-1">Campus Living & Environment</h2>
+                <p class="text-secondary small mb-0">Experience modern, serene living engineered for engineering scholars.</p>
             </div>
-            <div class="col-lg-3 text-lg-end mt-2 mt-lg-0">
-                <a href="{{ route('public.about') }}" class="btn btn-hitam-outline-green">View Guidelines</a>
+            <a href="{{ route('public.gallery') }}" class="btn btn-sm btn-hitam-outline-green mt-2 mt-sm-0">
+                View Full Photo Gallery <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
+
+        <!-- 3-Column Hero Photography Cards -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 position-relative group-hover-zoom">
+                    <img src="{{ asset('images/hostel-building.jpg') }}" class="w-100" alt="Boys Residential Block" style="height: 240px; object-fit: cover;">
+                    <div class="card-body p-4 bg-white d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-success-subtle text-success border border-success-subtle">Boys Block</span>
+                            <span class="small text-muted"><i class="bi bi-people me-1"></i>450+ Beds</span>
+                        </div>
+                        <h5 class="fw-bold text-forest mb-2">Boys Residential Wing</h5>
+                        <p class="small text-muted mb-3 flex-grow-1">
+                            Double & triple sharing furnished suites with solar hot water and high-speed campus Wi-Fi.
+                        </p>
+                        <a href="{{ route('public.hostels.boys') }}" class="btn btn-sm btn-outline-success w-100 fw-semibold">
+                            Explore Rooms & Specs
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 position-relative group-hover-zoom">
+                    <img src="{{ asset('images/student-room.jpg') }}" class="w-100" alt="Furnished Student Room" style="height: 240px; object-fit: cover;">
+                    <div class="card-body p-4 bg-white d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle">Student Rooms</span>
+                            <span class="small text-muted"><i class="bi bi-shield-check me-1"></i>24/7 Security</span>
+                        </div>
+                        <h5 class="fw-bold text-forest mb-2">Furnished Living Quarters</h5>
+                        <p class="small text-muted mb-3 flex-grow-1">
+                            Individual steel cots, ergonomic study desks, personal wardrobes, and cross-ventilation balconies.
+                        </p>
+                        <a href="{{ route('public.hostels.girls') }}" class="btn btn-sm btn-outline-success w-100 fw-semibold">
+                            View Girls Block
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 position-relative group-hover-zoom">
+                    <img src="{{ asset('images/dining-hall.jpg') }}" class="w-100" alt="Central Dining Hall" style="height: 240px; object-fit: cover;">
+                    <div class="card-body p-4 bg-white d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle">Mess & Dining</span>
+                            <span class="small text-muted"><i class="bi bi-patch-check me-1"></i>FSSAI Certified</span>
+                        </div>
+                        <h5 class="fw-bold text-forest mb-2">Central Dining Hall</h5>
+                        <p class="small text-muted mb-3 flex-grow-1">
+                            Steam-cooked vegetarian & multi-cuisine meals planned weekly by the elected Student Mess Committee.
+                        </p>
+                        <a href="{{ route('public.mess') }}" class="btn btn-sm btn-outline-success w-100 fw-semibold">
+                            Weekly 7-Day Menu
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="row g-4">
-            <!-- Boys Hostel -->
-            <div class="col-md-4">
-                <div class="card hitam-card h-100 card-accent-top">
-                    <img src="{{ asset('images/hostel-building.jpg') }}" class="card-img-top" alt="Boys Hostel" style="height: 180px; object-fit: cover;">
-                    <div class="card-body p-4 d-flex flex-column">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <span class="badge-status badge-active">
-                                <i class="bi bi-record-fill text-forest"></i> Active
-                            </span>
-                            <span class="text-muted small fw-semibold"><i class="bi bi-building me-1"></i>Block A & B</span>
-                        </div>
-                        <h4 class="fw-bold mb-2 text-forest">Boys Hostel</h4>
-                        <p class="text-secondary small mb-4 flex-grow-1">
-                            Equipped with ventilated double and triple-sharing rooms, study desks, wardrobe storage, high-speed Wi-Fi, and recreational spaces.
-                        </p>
-                        <ul class="list-unstyled small text-secondary mb-4">
-                            <li class="mb-2"><i class="bi bi-check2 text-forest me-2 fw-bold"></i>Resident Warden & Supervisor</li>
-                            <li class="mb-2"><i class="bi bi-check2 text-forest me-2 fw-bold"></i>Solar Water Heating System</li>
-                            <li class="mb-2"><i class="bi bi-check2 text-forest me-2 fw-bold"></i>Gymnasium & Indoor Games</li>
-                        </ul>
-                        <a href="{{ route('public.hostels.boys') }}" class="btn btn-hitam-outline-green w-100 fw-semibold text-start d-flex justify-content-between align-items-center">
-                            <span>Hostel Details & Layout</span>
-                            <i class="bi bi-arrow-right text-forest"></i>
-                        </a>
+        <!-- Visual Media Placeholder Slot Bar (Designed specifically for future photos) -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 bg-white border border-light">
+            <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-camera text-forest fs-4"></i>
+                    <h6 class="fw-bold text-dark mb-0">Virtual Tour & Visual Highlights</h6>
+                </div>
+                <span class="badge bg-light text-muted border">High-Resolution Photo Grid</span>
+            </div>
+            
+            <div class="row g-3">
+                <!-- Slot 1 -->
+                <div class="col-6 col-md-3">
+                    <div class="rounded-3 p-3 text-center position-relative overflow-hidden d-flex flex-column justify-content-center align-items-center" style="height: 120px; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border: 1.5px dashed #81C784;">
+                        <i class="bi bi-dribbble fs-3 text-forest mb-1"></i>
+                        <span class="fw-bold text-forest small">Sports Courts</span>
+                        <small class="text-muted" style="font-size: 0.7rem;">Floodlit Basketball & Badminton</small>
                     </div>
                 </div>
-            </div>
-
-            <!-- Girls Hostel -->
-            <div class="col-md-4">
-                <div class="card hitam-card h-100 card-accent-top">
-                    <img src="{{ asset('images/student-room.jpg') }}" class="card-img-top" alt="Girls Hostel" style="height: 180px; object-fit: cover;">
-                    <div class="card-body p-4 d-flex flex-column">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <span class="badge-status badge-active">
-                                <i class="bi bi-record-fill text-forest"></i> Active
-                            </span>
-                            <span class="text-muted small fw-semibold"><i class="bi bi-shield-lock me-1"></i>High Security</span>
-                        </div>
-                        <h4 class="fw-bold mb-2 text-forest">Girls Hostel</h4>
-                        <p class="text-secondary small mb-4 flex-grow-1">
-                            A secure, comfortable residential living complex with dedicated biometric access, warden supervision, and quiet study zones.
-                        </p>
-                        <ul class="list-unstyled small text-secondary mb-4">
-                            <li class="mb-2"><i class="bi bi-check2 text-forest me-2 fw-bold"></i>Dedicated Female Wardens & Staff</li>
-                            <li class="mb-2"><i class="bi bi-check2 text-forest me-2 fw-bold"></i>24/7 Monitored Campus Perimeter</li>
-                            <li class="mb-2"><i class="bi bi-check2 text-forest me-2 fw-bold"></i>Attached Dining Facility</li>
-                        </ul>
-                        <a href="{{ route('public.hostels.girls') }}" class="btn btn-hitam-outline-green w-100 fw-semibold text-start d-flex justify-content-between align-items-center">
-                            <span>Hostel Details & Layout</span>
-                            <i class="bi bi-arrow-right text-forest"></i>
-                        </a>
+                <!-- Slot 2 -->
+                <div class="col-6 col-md-3">
+                    <div class="rounded-3 p-3 text-center position-relative overflow-hidden d-flex flex-column justify-content-center align-items-center" style="height: 120px; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border: 1.5px dashed #81C784;">
+                        <i class="bi bi-activity fs-3 text-forest mb-1"></i>
+                        <span class="fw-bold text-forest small">Gymnasium</span>
+                        <small class="text-muted" style="font-size: 0.7rem;">Cardio & Weights Fitness</small>
                     </div>
                 </div>
-            </div>
-
-            <!-- New Boys Hostel -->
-            <div class="col-md-4">
-                <div class="card hitam-card h-100 card-accent-top opacity-85">
-                    <img src="{{ asset('images/dining-hall.jpg') }}" class="card-img-top" alt="New Boys Hostel" style="height: 180px; object-fit: cover; filter: grayscale(30%);">
-                    <div class="card-body p-4 d-flex flex-column">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <span class="badge-status badge-coming-soon">
-                                <i class="bi bi-hourglass-split text-warning"></i> Coming Soon
-                            </span>
-                            <span class="text-muted small fw-semibold"><i class="bi bi-cone-striped me-1"></i>Phase 2</span>
-                        </div>
-                        <h4 class="fw-bold mb-2 text-forest">New Boys Hostel</h4>
-                        <p class="text-secondary small mb-4 flex-grow-1">
-                            A modern expansion designed with upgraded room layouts, enhanced common spaces, and sustainable eco-friendly architecture.
-                        </p>
-                        <ul class="list-unstyled small text-secondary mb-4">
-                            <li class="mb-2"><i class="bi bi-check2 text-muted me-2"></i>Expanded Capacity & Amenities</li>
-                            <li class="mb-2"><i class="bi bi-check2 text-muted me-2"></i>Modern Study Lounges</li>
-                            <li class="mb-2"><i class="bi bi-check2 text-muted me-2"></i>Dynamic DB-Driven Activation</li>
-                        </ul>
-                        <a href="{{ route('public.hostels.new-boys') }}" class="btn btn-outline-secondary w-100 fw-semibold text-start d-flex justify-content-between align-items-center disabled">
-                            <span>Under Construction</span>
-                            <i class="bi bi-clock text-muted"></i>
-                        </a>
+                <!-- Slot 3 -->
+                <div class="col-6 col-md-3">
+                    <div class="rounded-3 p-3 text-center position-relative overflow-hidden d-flex flex-column justify-content-center align-items-center" style="height: 120px; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border: 1.5px dashed #81C784;">
+                        <i class="bi bi-book fs-3 text-forest mb-1"></i>
+                        <span class="fw-bold text-forest small">Quiet Study Hall</span>
+                        <small class="text-muted" style="font-size: 0.7rem;">Night Reading Rooms</small>
+                    </div>
+                </div>
+                <!-- Slot 4 -->
+                <div class="col-6 col-md-3">
+                    <div class="rounded-3 p-3 text-center position-relative overflow-hidden d-flex flex-column justify-content-center align-items-center" style="height: 120px; background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border: 1.5px dashed #81C784;">
+                        <i class="bi bi-sun fs-3 text-forest mb-1"></i>
+                        <span class="fw-bold text-forest small">Green Solar Grid</span>
+                        <small class="text-muted" style="font-size: 0.7rem;">Eco-Smart Campus Rooftop</small>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
 
 <!-- Facilities & Amenities Section -->
 <section class="py-5 bg-white border-top border-bottom" style="border-color: var(--hitam-border) !important;">

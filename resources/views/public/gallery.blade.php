@@ -23,18 +23,18 @@
 <section class="py-5">
     <div class="container py-2">
         <!-- Filter Tabs -->
-        <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
-            <button class="btn btn-sm btn-hitam-green">All Photos</button>
-            <button class="btn btn-sm btn-hitam-outline-green">Hostel Blocks</button>
-            <button class="btn btn-sm btn-hitam-outline-green">Student Rooms</button>
-            <button class="btn btn-sm btn-hitam-outline-green">Mess & Dining</button>
-            <button class="btn btn-sm btn-hitam-outline-green">Sports & Gym</button>
-            <button class="btn btn-sm btn-hitam-outline-green">Green Campus</button>
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-5" id="galleryFilters">
+            <button class="btn btn-sm btn-hitam-green" data-filter="all">All Photos</button>
+            <button class="btn btn-sm btn-hitam-outline-green" data-filter="boys-block">Hostel Blocks</button>
+            <button class="btn btn-sm btn-hitam-outline-green" data-filter="student-rooms">Student Rooms</button>
+            <button class="btn btn-sm btn-hitam-outline-green" data-filter="mess-dining">Mess & Dining</button>
+            <button class="btn btn-sm btn-hitam-outline-green" data-filter="sports-gym">Sports & Gym</button>
+            <button class="btn btn-sm btn-hitam-outline-green" data-filter="green-campus">Green Campus</button>
         </div>
 
-        <div class="row g-4">
+        <div class="row g-4" id="galleryGrid">
             <!-- Item 1 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 gallery-item" data-category="boys-block">
                 <div class="gallery-card">
                     <div class="gallery-img-box" style="background-image: url('{{ asset('images/hostel-building.jpg') }}'); background-size: cover; background-position: center;">
                         <div class="gallery-overlay">
@@ -49,7 +49,7 @@
             </div>
 
             <!-- Item 2 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 gallery-item" data-category="student-rooms">
                 <div class="gallery-card">
                     <div class="gallery-img-box" style="background-image: url('{{ asset('images/student-room.jpg') }}'); background-size: cover; background-position: center;">
                         <div class="gallery-overlay">
@@ -64,7 +64,7 @@
             </div>
 
             <!-- Item 3 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 gallery-item" data-category="mess-dining">
                 <div class="gallery-card">
                     <div class="gallery-img-box" style="background-image: url('{{ asset('images/dining-hall.jpg') }}'); background-size: cover; background-position: center;">
                         <div class="gallery-overlay">
@@ -79,7 +79,7 @@
             </div>
 
             <!-- Item 4 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 gallery-item" data-category="boys-block">
                 <div class="gallery-card">
                     <div class="gallery-img-box" style="background: linear-gradient(135deg, #1B5E20, #0D2818);">
                         <div class="gallery-overlay">
@@ -94,7 +94,7 @@
             </div>
 
             <!-- Item 5 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 gallery-item" data-category="sports-gym">
                 <div class="gallery-card">
                     <div class="gallery-img-box" style="background: linear-gradient(135deg, #2E7D32, #153E23);">
                         <div class="gallery-overlay">
@@ -109,7 +109,7 @@
             </div>
 
             <!-- Item 6 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 gallery-item" data-category="student-rooms">
                 <div class="gallery-card">
                     <div class="gallery-img-box" style="background: linear-gradient(135deg, #153E23, #0D2818);">
                         <div class="gallery-overlay">
@@ -124,7 +124,7 @@
             </div>
 
             <!-- Item 7 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 gallery-item" data-category="sports-gym">
                 <div class="gallery-card">
                     <div class="gallery-img-box" style="background: linear-gradient(135deg, #0D2818, #1B5E20);">
                         <div class="gallery-overlay">
@@ -139,7 +139,7 @@
             </div>
 
             <!-- Item 8 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 gallery-item" data-category="green-campus">
                 <div class="gallery-card">
                     <div class="gallery-img-box" style="background: linear-gradient(135deg, #1B5E20, #2E7D32);">
                         <div class="gallery-overlay">
@@ -154,7 +154,7 @@
             </div>
 
             <!-- Item 9 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 gallery-item" data-category="green-campus">
                 <div class="gallery-card">
                     <div class="gallery-img-box" style="background: linear-gradient(135deg, #153E23, #2E7D32);">
                         <div class="gallery-overlay">
@@ -168,6 +168,48 @@
                 </div>
             </div>
         </div>
+
+        <!-- Empty state (shown when no items match filter) -->
+        <div id="galleryEmpty" class="text-center py-5" style="display: none !important;">
+            <i class="bi bi-images fs-1 text-muted opacity-50"></i>
+            <p class="text-muted mt-3 mb-0">No photos in this category yet.</p>
+        </div>
     </div>
 </section>
+
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterBtns = document.querySelectorAll('#galleryFilters button');
+        const items = document.querySelectorAll('.gallery-item');
+        const emptyState = document.getElementById('galleryEmpty');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+
+                // Toggle active button styles
+                filterBtns.forEach(b => {
+                    b.classList.remove('btn-hitam-green');
+                    b.classList.add('btn-hitam-outline-green');
+                });
+                btn.classList.remove('btn-hitam-outline-green');
+                btn.classList.add('btn-hitam-green');
+
+                // Show/hide items
+                let visible = 0;
+                items.forEach(item => {
+                    const match = filter === 'all' || item.dataset.category === filter;
+                    item.style.display = match ? '' : 'none';
+                    if (match) visible++;
+                });
+
+                // Show empty state if nothing matches
+                emptyState.style.display = visible === 0 ? 'block' : 'none';
+            });
+        });
+    });
+</script>
+@endpush

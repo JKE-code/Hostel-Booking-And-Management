@@ -56,20 +56,40 @@
             </div>
 
             <div class="col-lg-6">
-                <div class="card border-0 shadow-sm overflow-hidden" style="border-radius: 12px; background: var(--hitam-primary-bg); border: 1px solid var(--hitam-primary-light) !important;">
-                    <div class="card-body p-4 p-md-5">
-                        <h4 class="fw-bold text-forest mb-3"><i class="bi bi-quote me-2 text-accent-green"></i>Warden's Welcome Message</h4>
-                        <p class="text-secondary fst-italic mb-4" style="line-height: 1.8;">
-                            "Our mandate at HITAM Hostels extends far beyond providing beds and meals. We are mentors, guardians, and advocates for every young mind that walks through our gates. We prioritize an environment where every scholar feels safe, heard, healthy, and challenged to achieve academic excellence."
-                        </p>
-                        <div class="d-flex align-items-center gap-3 pt-3 border-top border-success-subtle">
-                            <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 48px; height: 48px; font-size: 1.1rem;">
-                                CW
-                            </div>
-                            <div>
-                                <div class="fw-bold text-forest">Prof. V. Ramanjaneyulu</div>
-                                <div class="small text-muted">Chief Warden & Dean of Student Affairs</div>
-                            </div>
+                {{-- Photo Mosaic: loads real images from public/images; graceful placeholder if absent --}}
+                <div class="photo-mosaic">
+                    <div class="photo-mosaic-main">
+                        <img src="{{ asset('images/hostel-building.jpg') }}"
+                             alt="HITAM Boys Residential Block"
+                             style="width:100%;height:100%;object-fit:cover;border-radius:12px;"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="img-placeholder h-100" style="display:none;border-radius:12px;">
+                            <i class="bi bi-building-fill"></i>
+                            <span class="img-ph-label">Boys Residential Block</span>
+                            <span class="img-ph-sub">Multi-storey academic hostel</span>
+                        </div>
+                        <div class="img-float-badge">
+                            <i class="bi bi-buildings"></i> HITAM Residential Campus
+                        </div>
+                    </div>
+                    <div class="photo-mosaic-side">
+                        <img src="{{ asset('images/student-room.jpg') }}"
+                             alt="Furnished Student Room"
+                             style="width:100%;height:100%;object-fit:cover;border-radius:12px;"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="img-placeholder h-100" style="display:none;border-radius:12px;min-height:unset;">
+                            <i class="bi bi-door-open"></i>
+                            <span class="img-ph-label">Student Rooms</span>
+                        </div>
+                    </div>
+                    <div class="photo-mosaic-side">
+                        <img src="{{ asset('images/dining-hall.jpg') }}"
+                             alt="Central Dining Hall"
+                             style="width:100%;height:100%;object-fit:cover;border-radius:12px;"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="img-placeholder h-100" style="display:none;border-radius:12px;min-height:unset;">
+                            <i class="bi bi-cup-hot"></i>
+                            <span class="img-ph-label">Dining Hall</span>
                         </div>
                     </div>
                 </div>
@@ -77,6 +97,7 @@
         </div>
     </div>
 </section>
+
 
 <!-- Administrative & Pastoral Hierarchy -->
 <section class="py-5 bg-white border-top border-bottom">
@@ -186,7 +207,7 @@
         <p class="text-secondary mb-4 mx-auto" style="max-width: 550px;">
             Review our Boys and Girls residential wings, check available sharing capacities, and download the allotment prospectus.
         </p>
-        <div class="d-flex justify-content-center gap-3">
+        <div class="d-flex flex-wrap justify-content-center gap-3">
             <a href="{{ route('public.hostels.boys') }}" class="btn btn-hitam-green">View Boys Hostel</a>
             <a href="{{ route('public.hostels.girls') }}" class="btn btn-hitam-outline-green">View Girls Hostel</a>
         </div>
