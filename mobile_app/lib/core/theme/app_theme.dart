@@ -5,7 +5,7 @@ class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       useMaterial3: true,
-      colorScheme: ColorScheme.light(
+      colorScheme: const ColorScheme.light(
         primary: AppColors.primary,
         onPrimary: Colors.white,
         secondary: AppColors.accent,
@@ -22,10 +22,10 @@ class AppTheme {
         elevation: 0,
         centerTitle: false,
         titleTextStyle: TextStyle(
-          fontSize: 20,
+          fontSize: 19,
           fontWeight: FontWeight.w700,
           color: Colors.white,
-          letterSpacing: 0.2,
+          letterSpacing: -0.2,
         ),
       ),
       cardTheme: CardThemeData(
@@ -33,13 +33,13 @@ class AppTheme {
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
-          side: const BorderSide(color: AppColors.cardBorder, width: 1),
+          side: const BorderSide(color: AppColors.cardBorderLight, width: 1),
         ),
         margin: EdgeInsets.zero,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primary,
+          backgroundColor: AppColors.primaryMedium,
           foregroundColor: Colors.white,
           elevation: 0,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
@@ -66,17 +66,17 @@ class AppTheme {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppColors.primary, width: 1.5),
+          borderSide: const BorderSide(color: AppColors.primaryAccent, width: 1.8),
         ),
         labelStyle: const TextStyle(color: AppColors.textSecondary),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Colors.white,
-        selectedItemColor: AppColors.primary,
+        selectedItemColor: AppColors.primaryMedium,
         unselectedItemColor: AppColors.textMuted,
         type: BottomNavigationBarType.fixed,
         elevation: 8,
-        selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
+        selectedLabelStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 12),
         unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w500, fontSize: 12),
       ),
     );
