@@ -27,4 +27,6 @@ database/*.sqlite
 database/*.sqlite-journal
 to_upload.zip
 *.zip
+/scratch
+/apk
 
