@@ -97,6 +97,12 @@
     @stack('styles')
 </head>
 <body>
+    @if(Auth::check() && Auth::user()->role === 'admin')
+        <div class="bg-warning text-dark py-1 px-3 d-flex justify-content-between align-items-center small fw-semibold" style="position: sticky; top: 0; z-index: 1050;">
+            <div><i class="bi bi-shield-shaded me-1"></i>Super Administrator Inspection Mode (Level 1 Master)</div>
+            <a href="{{ route('admin.dashboard') }}" class="btn btn-sm btn-dark py-0" style="font-size: 0.75rem;">Return to Estate Overview &rarr;</a>
+        </div>
+    @endif
     <!-- Mobile Drawer Backdrop Overlay -->
     <div class="portal-backdrop" id="portalBackdrop"></div>
 
@@ -121,11 +127,13 @@
             <div class="p-3 mx-3 my-3 rounded-3" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
                 <div class="d-flex align-items-center gap-2">
                     <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center fw-bold" style="width: 38px; height: 38px;">
-                        RS
+                        {{ strtoupper(substr(Auth::user()->name ?? 'ST', 0, 2)) }}
                     </div>
                     <div class="overflow-hidden">
-                        <div class="fw-bold text-white text-truncate small">Rahul Sharma</div>
-                        <div class="text-white-50 small" style="font-size: 0.75rem;">Boys Hostel • B-204</div>
+                        <div class="fw-bold text-white text-truncate small">{{ Auth::user()->name ?? 'Resident Scholar' }}</div>
+                        <div class="text-white-50 small" style="font-size: 0.75rem;">
+                            {{ Auth::user()->student->roll_number ?? 'HITAM Scholar' }}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -160,9 +168,12 @@
 
             <!-- Sidebar Footer -->
             <div class="p-3 border-top border-white border-opacity-10">
-                <a href="{{ route('login') }}" class="btn btn-sm btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2">
-                    <i class="bi bi-box-arrow-right"></i> Sign Out
-                </a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-sm btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2">
+                        <i class="bi bi-box-arrow-right"></i> Sign Out
+                    </button>
+                </form>
             </div>
         </aside>
 
@@ -247,6 +258,7 @@
             backdrop?.addEventListener('click', closeSidebar);
         });
     </script>
+    <script src="{{ asset('js/session-timeout.js') }}"></script>
     @stack('scripts')
 </body>
 </html>

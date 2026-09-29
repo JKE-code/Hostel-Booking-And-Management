@@ -11,11 +11,15 @@
             <div class="position-relative" style="z-index: 2;">
                 <div class="d-flex align-items-center gap-2 mb-2">
                     <span class="badge bg-white text-forest fw-bold px-2 py-1">Active Resident</span>
-                    <span class="text-white-50 small">Roll No: 23HT1A0501</span>
+                    <span class="text-white-50 small">Roll No: {{ $student->roll_number ?? 'Pending Admission' }}</span>
                 </div>
-                <h3 class="fw-bold mb-1">Good Morning, Rahul Sharma</h3>
+                <h3 class="fw-bold mb-1">Good Morning, {{ $student->name ?? Auth::user()->name }}</h3>
                 <p class="text-white-50 small mb-4" style="max-width: 500px;">
-                    Boys Residential Block • Room B-204 (2-Sharing) • Bed 01
+                    @if($allocation)
+                        {{ $allocation->bed->room->floor->block->hostel->name ?? 'Residential Block' }} • Room {{ $allocation->bed->room->room_number }} • Bed {{ $allocation->bed->bed_number }}
+                    @else
+                        Room Allocation in progress by Hostel Warden
+                    @endif
                 </p>
 
                 <div class="row g-3 pt-3 border-top border-white border-opacity-10 text-start student-hero-stat-row">
